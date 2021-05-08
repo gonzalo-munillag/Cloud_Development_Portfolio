@@ -30,6 +30,18 @@ What is the difference between a microservice and a serverless function?
 
 This distinction is still being defined by the tech community, but typically, a microservice is larger and can do more than a function. A function is a relatively small bit of code that performs only one action in response to an event. Depending on how developers have divided up an application, a microservice may be equivalent to a function (meaning it performs only one action), or it may be made up of multiple functions.
 
+Calrifications from the pros:
+
+Autoscaling is a method used to automatically increase or decrease the number of resources required on a service or App. in AWS this can be done adding or removing EC2 instances "Scaling out" or making the current EC2 more bigger or faster using a different type of Instance "Scaling up"
+
+Read this documentation on the AWS guide.
+
+Now, Serverless is a model in which the Cloud provider, AWS, allocates resources to be used on-demand. There are not instances running constantly, the resources will be activated only when is required. Basically, for you as a developer, there is not server to worry about.
+
+[Ref 1](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html)
+[Ref 2](https://www.cloudflare.com/learning/serverless/what-is-serverless/)
+[Ref 3](https://aws.amazon.com/serverless/faqs/)
+
 ### Types of Cloud Computing
 
 Infrastructure-as-a-Service (IaaS)
