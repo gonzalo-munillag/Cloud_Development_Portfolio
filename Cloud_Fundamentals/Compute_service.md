@@ -90,7 +90,6 @@ The most productive high performance computing (HPC) systems feature a highly tu
 
 Load Balancer - A load balancer distributes the incoming traffic across multiple targets, such as EC2 instances in one or more Availability Zones. AWS supports three types of load balancers: Application Load Balancers, Network Load Balancers (new), and Classic Load Balancers (might become deprecated soon). 
   
-  
 [Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
 [Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
 [Classic Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html)
@@ -118,8 +117,6 @@ TCP is connection-oriented, and a connection between client and server is establ
 [Ref](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 
 ## Elastic Block Store (EBS)
-
-Elastic Block Store
 
 Elastic Block Store (EBS) is a storage solution for EC2 instances and is a physical hard drive that is attached to the EC2 instance to increase storage.
 
@@ -168,10 +165,83 @@ A virtual private cloud (VPC) is an on-demand configurable pool of shared resour
 [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud)
 [Amazon VPC](https://aws.amazon.com/vpc/?vpc-blogs.sort-by=item.additionalFields.createdDate&vpc-blogs.sort-order=desc)
 [Amazon VPC ii](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+[AWS network structures](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_wizard.html)
+
+Classless Inter-Domain Routing (CIDR /ˈsaɪdər, ˈsɪ-/) is a method for allocating IP addresses and for IP routing. IP addresses are described as consisting of two groups of bits in the address: the most significant bits are the network prefix, which identifies a whole network or subnet, and the least significant set forms the host identifier, which specifies a particular interface of a host on that network. This division is used as the basis of traffic routing between IP networks and for address allocation policies.  Class A, B, C and CIDR networks : Traditionally IP network is classified as A, B or C network. The computers identify the class by first 3 bits (A=000, B=100, C=110), while humans identify the class by first octet(8-bit) number. With scarcity of IP addresses, the class-based system has been replaced by ClasslessInter-DomainRouting (CIDR) to more efficiently allocate IP addresses. Internet Protocol version 6, or IPv6, was first introduced in the late 1990s as a replacement for IPv4. Even then the builders of the internet realized IPv4’s limitations and the eventual shortage.
+
+IPv6 uses 128-bit addresses, allowing for a theoretical 340,282,366,920,938,463,463,374,607,431,768,211,456, or 340 undecillion addresses. IPv6 addresses are represented as eight groups of four hexadecimal digits, with the groups being separated by colons. One example might be “2002:0de6:0001:0042:0100:8c2e:0370:7234,” but methods to abbreviate this full notation exist.
+
+You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances. [ref](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
+
+A network access control list (ACL) defines the set of firewall rules for controlling traffic coming in and out of subnets in your VPC. 
+
+### Compute Power in the Cloud
+
+Compute power in the cloud is a faster way to build applications, providing:
+
+    no servers to manage (i.e. serverless)
+    ability to continuously scale
+    ability to run code on demand in response to events
+    pay only when your code runs
+
+#### Lambda
+
+AWS Lambda provides you with computing power in the cloud by allowing you to execute code without standing up or managing servers.
+AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes. With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code as a ZIP file or container image, and Lambda automatically and precisely allocates compute execution power and runs your code based on the incoming request or event, for any scale of traffic. You can set up your code to automatically trigger from over 200 AWS services and SaaS applications or call it directly from any web or mobile app. You can write Lambda functions in your favorite language (Node.js, Python, Go, Java, and more) and use both serverless and container tools, such as AWS SAM or Docker CLI, to build, test, and deploy your functions.
+
+Tips
+
+    Lambda is found under the Compute section on the AWS Management Console.
+    Lambdas have a time limit of 15 minutes.
+    The code you run on AWS Lambda is called a “Lambda function.”
+    Lambda code can be triggered by other AWS services.
+    AWS Lambda supports Java, Go, PowerShell, Node.js, C#/.NET, Python, and Ruby. There is a Runtime API that allows you to use other programming languages to author your functions.
+    Lambda code can be authored via the console.
+
+Lambda is event-driven, so you can run your code based on certain events happening, like a file upload, or a record being inserted in a database, etc. 
+
+### Elastic Beanstalk
+
+Elastic Beanstalks is an orchestration service that allows you to deploy a web application at the touch of a button by spinning up (or provisioning) all of the services that you need to run your application.
+
+Elastic Beanstalk can spin up database instances for you, VPCs, security groups, EC2 instances, etc.
+
+AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+
+You can simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
+
+There is no additional charge for Elastic Beanstalk - you pay only for the AWS resources needed to store and run your applications.
+
+[ref](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
+
+Tips
+
+    Elastic Beanstalk is found under the Compute section of the AWS Management Console.
+    Elastic Beanstalk can be used to deployed web applications developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.
+    You can run your applications in a VPC.
 
 
+### S3 vs. DynamoDB
 
+The basic difference between S3 and DynamoDB is that S3 is file storage whereas DynamoDB is a Database. Both S3 and DynamoDB are storage services provided by AWS and it depends on what kind of application you want to use it for, whether any one of them will be beneficial for you in a long run.
 
+What is S3 and DynamoDB?
+
+S3: S3 is a file storage and is well suited if you want to store unstructured data. S3 doesnt follow a folder structure and uses everything as an object. In place of using a hierarchical directory, S3 stores files in a flat organisation of containers called Buckets. S3 uses unique Ids called Keys to retrieve files from the bucket. The maximum size for each item (Object) is 5TB. S3 is suitable for storing large objects.
+
+The following table shows the pricing of S3.
+
+DynamoDB: DynamoDB is a NoSQL database which is built for high throughput and low latency. DynamoDB best fits for you when you need to deal with (semi) structured data. DynamoDb is used to store key-value. It uses items and attributes for its tables. Each item contains different number of attributes. DynamoDb supports two kinds of primary keys, Partition Key and Partition key and Sort key.
+
+They use secondary indexes LSI/GSI which allows you to make query and scan tables. Data replication is possible in DynamoDB. DynamoDB size limits to 400KB which makes it best suited for storing small items.
+
+The following table shows DynamoDB pricing:
+
+Comparison table between DynamoDb and S3:
+
+S3 and DynamoDB both are great storage services provided by AWS. There are a lot of difference in terms of use cases, size limit, pricing, etc. If you are looking for storage for your applications, you can go through these points to understand which best suits your requirement. Choosing the right storage service and database can save you lot of money and time.
+
+[ref](https://www.quora.com/What-is-the-difference-between-storage-S3-and-database-DynamoDB-on-AWS?share=1)
 
 
 
