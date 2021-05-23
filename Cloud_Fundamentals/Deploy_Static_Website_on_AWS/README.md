@@ -12,4 +12,12 @@ CloudFront enpoint: d3tjvijhsyo6f9.cloudfront.net
 
 Here are the set elements:
 
-![S3](S3_bucket.png)
+![1](S3_bucket.png)
+
+![2](Uploaded_files_to_S3.png)
+
+![3](S3_supports_static_website_hosting.png)
+
+![4](bucket_policy.png)
+
+![5](cloudfront_enabled.png)
