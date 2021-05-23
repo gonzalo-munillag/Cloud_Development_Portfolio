@@ -9,3 +9,7 @@ In this project:
 Wesbsite's URL: https://bucket-056077564337-static-web.s3.us-east-2.amazonaws.com/index.html
 
 CloudFront enpoint: d3tjvijhsyo6f9.cloudfront.net
+
+Here are the set elements:
+
+![S3](S3_bucket.png)
