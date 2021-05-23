@@ -9,9 +9,10 @@ In this project:
 Wesbsite's URL: https://bucket-056077564337-static-web.s3.us-east-2.amazonaws.com/index.html
 
 CloudFront enpoint: d3tjvijhsyo6f9.cloudfront.net
+
 (The website was deployed the 23/05/2021. Some months past this date, the website will not be hosted anymore)
 
-Here are the set elements:
+Here are the set of elements needed and the different settings:
 
 ![1](S3_bucket.png)
 
