@@ -39,15 +39,59 @@ Microservices are individual specialized systems (software deployed on specializ
 
 Basic hand shckaes betwen client and server. So we have an standardized interface. This way, we make sure they can send data back and forth.
 
-1. The client makes a REQUEST to the server. 
-Example
-https://www.udacity.com/school-of-cloud-computing
+###### The client makes a REQUEST to the server. 
 
-https - this is the protocol (Hypertext Transfer Protocol). It announces the "language" the client and server should be speaking. HTTPS is a secure way of end-to-end communication using (before) SSL or TLS.
+Example: https://www.udacity.com/school-of-cloud-computing
+
+1.  
+https - this is the protocol (Hypertext Transfer Protocol). It announces the "language" the client and server should be speaking. HTTPS is a secure way of end-to-end communication using the communication protocols (before) SSL or TLS.
 HTTP means we send hypetext type of information. 
+You can also have: file (interface with the file system of your local OS) and ftp (transfer files over a network)
 
-Hypertext is text displayed on a computer display or other electronic devices with references (hyperlinks) to other text that the reader can immediately access.[1] Hypertext documents are interconnected by hyperlinks, which are typically activated by a mouse click, keypress set, or screen touch. Apart from text, the term "hypertext" is also sometimes used to describe tables, images, and other presentational content formats with integrated hyperlinks. Hypertext is one of the key underlying concepts of the World Wide Web,[2] where Web pages are often written in the Hypertext Markup Language (HTML). As implemented on the Web, hypertext enables the easy-to-use publication of information over the Internet.
 
+Hypertext is text displayed on a computer display or other electronic devices with references (hyperlinks) to other text that the reader can immediately access. Hypertext documents are interconnected by hyperlinks, which are typically activated by a mouse click, keypress set, or screen touch. Apart from text, the term "hypertext" is also sometimes used to describe tables, images, and other presentational content formats with integrated hyperlinks. Hypertext is one of the key underlying concepts of the World Wide Web, where Web pages are often written in the Hypertext Markup Language (HTML). As implemented on the Web, hypertext enables the easy-to-use publication of information over the Internet.
+[ref](https://en.wikipedia.org/wiki/Hypertext)
+
+2.  
+www.udacity.com  
+www: subdomain  
+udacity.com: domain name  
+
+This tells the system where we want to route traffic to. So that the request arrives to the desired server.  
+It could also be an IP address, like 192.168.1.1, or a **localhost** (The code runs in our local machine.). 
+
+3.  
+school-of-cloud-computing: Path.  
+The path tells the server which resources are we atrying to get.
+
+Othe more inricate examples:  
+https://sub.domain.com:port/where/file.html?query=param#frag
+
+port: what network port to route the traffic through. Eg. 80: general web traffic, 8080 is an alternative, and 5432 used when working with databases.
+
+The file extention, file.html: what type of file we have. 
+
+?query=param: query variables we pass to the server
+
+#frag: fragments. Useful for dealing with front-end location of where the information resides. 
+
+Additonal data may be sent with a request:  
+Headers. Allos to inlcude content type, type of file and what kind of file we are sending. Authorization headers, allos to send tokens or passwords securely to make sure we can execute a set of actions in the server.   
+Reuqest body payload. Tell us what data we are sending to a server.
+Request types: What kind of command are we issuing.   
+  GET
+  POST
+  PATCH
+  DELETE
+              
+###### The serves sends a RESPONSE to the server. 
+            
+Standardized HTTP Status Codes
+
+No one expects you to remember every status code by heart. What's important is that you give some thought to the codes you're using in your systems. Here’s a good reference list of all HTTP status codes.
+
+              
+  
 
 
 
