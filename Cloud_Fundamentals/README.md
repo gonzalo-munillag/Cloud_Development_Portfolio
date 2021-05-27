@@ -6,9 +6,5 @@
 [Networking, Elasticity, Messaging, Containers, Management](https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/blob/main/Cloud_Fundamentals/Networking_Elasticity_Messaging_Containers_Management.md)   
 [Static web deployment (Project)](https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/tree/main/Cloud_Fundamentals/Deploy_Static_Website_on_AWS)
 
-<object data="https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/blob/main/Cloud_Fundamentals/CLOUD_(AWS)_structured.pdf" type="application/pdf">
-    <embed src="https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/blob/main/Cloud_Fundamentals/CLOUD_(AWS)_structured.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/blob/main/Cloud_Fundamentals/CLOUD_(AWS)_structured.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+[SUMMARY PDF](https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/blob/main/Cloud_Fundamentals/CLOUD_(AWS)_structured.pdf)
 
