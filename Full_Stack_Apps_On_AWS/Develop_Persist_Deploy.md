@@ -22,6 +22,10 @@ Cluster: A collection of instances which perform the same function. It may be us
 
 Autoscaling Group: A type of cluster that can increase or decrease the number of instances based on demand.
 
+Scale out: more computers to support more data means and more concurrency.
+
+Scale up: make a computer bigger, with more memory and processing.
+
 #### Monolithic vs. loosely coupled systems
 
 Tightly coupled: quick to stand-up, but may result in higher technical debt. 
@@ -195,16 +199,161 @@ Typescript is a flavor of JavaScript that forces hard typing on variables and me
 Files within exercise 02:
 
 package.json: Strcuture for the system. It manages the Sw itself and the dependencies.
-You run "nom i" in the terminal to install the dependencies. It will fetch the depedencies from the npm system and installing them in a local node modules folder.
+You run "npm i" in the terminal to install the dependencies. It will fetch the depedencies from the npm system and installing them in a local node modules folder.
 After having the dependencies, one may start building. We have installed some tools to help us in the development stage and some dependencies for typeScript. The tsconfig and the tslint files help the the TypeScript system to know how to transpile TypeScript into JavaScript.
 
 
 In the src directory:
 server.ts is the main codebase. This is a server file.  
 
+Introduction to Node
+
+Node (aka NodeJs) is a powerful framework to build network applications using JavaScript (in our case using TypeScript) outside of browsers. It has an asynchronous concurrent model which releases the developer from many concerns involving threading and dead-locking. Node is used as our server framework along with Express to handle web http requests and responses.
+Introduction to TypeScript
+
+Typescript is a flavor of JavaScript that forces hard typing on variables and methods. This prevents implementation errors like passing a string instead of a number. It compiles to pure JavaScript.
+
+Unit Tests
+
+Ensure our atomic functions and methods perform their tasks correctly or fail appropriately. We'll be playing with Mocha and Chai as our unit testing framework. We'll be covering the basics so checkout the docs!
+Integration Tests
+
+Integration Tests ensure every endpoint in our software package perform their tasks correctly, fails appropriately, and communicates with other systems in a predictable manner (so they integrate properly). We'll be playing with Postman as our integration testing framework. We'll be covering the basics so checkout the docs!
+
+Make sure the project has a master branch (production app), a stage branch (test branch running on the same infrastructure as the master branch), a development branch (where all changes are pushed), feature branches (where developers focus on specific functionalities). Also you should protect pull requests to the stage and master branches, just in case malicious develoeprs push code that, e.g., transfer money from users to their accounts.
+
+Using Packages
+
+Packages are libraries of code that are written by other developers and made available through open-source licenses for the development community to use freely.
+
+Make sure packages are popular, have issues that have been closed, open license, read desfription to make sure it is what you need, make sure it passes the builds and coverage, 
+
+### Storing data in the cloud
+
+RAM (Random Access Memory): Data can be accessed quickly, but is erased once the server restarts. It may be okay to use RAM when prototyping, and later replace it with a database.
+
+Hard Drive Disk: Data remains after server restarts, but is specific to that server (not shared across servers).
+
+Race Condition: When an application’s behavior is dependent on other uncontrollable events. This is an issue with storing data on disks or RAM of multiple servers.
+
+Relational Database: can store at scale, improve search runtime, and maintain relationships between data fields. We recommend using a database for storing data.
+
+**Time to test vs. time to build**
+In the future, it is beneficial to have, e.g., a proper relational database to reduce technical debt. However, it might not be interesting to build that on day one, as it might take too long to build in comparison to the tests you should run to decide and to check that features work.
+
+When you want to scale the data stored in your system, you need to pay attention to the search, read, and write speed.
+
+**Database basics**
+
+<img width="750" alt="Screenshot 2021-06-03 at 23 40 47" src="https://user-images.githubusercontent.com/57599753/120715615-226b7080-c4c5-11eb-90b3-dc0af745638c.png">
+
+One can add bloom filters to probabilisticly determine whether an item is in the branch of the B-tree.
+B-Tree: a generalization of a binary search tree, which stores sorted data, but can have more than 2 child nodes.
+
+Bloom Filters: a data structure that is useful for determining if an item is probably in a data set, or definitely not in the data set. Bloom filters don’t actually store the data themselves.
+
+primary key and foreign key: The primary consists of one or more column in a table that are unique to each record (each row). A foreign key in a table contains the primary key of another table.
+
+NoSQL dataases are very easy to scale out. They are key:value pair databases. Good when you do not know exactly what data model will contain.
+Careful with technical debt.
+
+**Structured Query Language for relational databases** (Postgress, MySQL, Oracle...)
+Easy to scale up. One can store information in RAM, so one can quickly access those indeces when we are looking for records.
+Slower to write information, as there are more indeces to update.
+
+<img width="790" alt="Screenshot 2021-06-03 at 23 52 44" src="https://user-images.githubusercontent.com/57599753/120716803-cb669b00-c4c6-11eb-813f-0eb31fa3892a.png">
+
+SQL is more like a standard, a framework. So the different databases that use it are not necesarily compatible as each SQL syntax has its own dialect.
+
+Created successfully a relational database in AWS and connected to it with Postbird.
+
+<img width="945" alt="Screenshot 2021-06-04 at 00 15 39" src="https://user-images.githubusercontent.com/57599753/120718704-01594e80-c4ca-11eb-90cb-364d263854c3.png">
+
+**Filestore basics**
+
+
+    File stores allow for archiving data. In AWS, the file store is called S3, and the archive resource is called “glacier”.
+    Content Delivery Network (CDN): are a network of proxy servers that are placed closer to end users to deliver data and compute. CDNs reduce latency for end users.
+    SignedURLs allow clients to send and receive data by directly communicating with the file store. This saves the server from using its bandwidth to serve as the intermediary that transmits data to and from the client. This is faster for clients as well.
+    Buckets: a simple directory-like system in which to store data.
+
+
+<img width="883" alt="Screenshot 2021-06-04 at 00 32 42" src="https://user-images.githubusercontent.com/57599753/120720448-6150f480-c4cc-11eb-8200-dccbb1aca9ed.png">
+
+<img width="763" alt="Screenshot 2021-06-04 at 00 37 12" src="https://user-images.githubusercontent.com/57599753/120720802-04a20980-c4cd-11eb-8eb4-d7fa1ce221a3.png">
+
+Notes
+
+    Create “dev” resources: Use the “dev” set of infrastructure (set of servers, filestores, databases) for development, and a separate set of infrastructure for production.
+    AES 256: Advanced Encryption Standard with a 256-bit key. This is a popular encryption standard.
+    CORS: Cross Origin Resource Sharing: defines how a client can interact with a resource, and what the client can and cannot do with that resource. Setting the CORS policy of our S3 bucket allows our client to communicate with the S3 bucket using the SignedURL pattern.
+
+Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+
+
+    HIPPA: HIPAA (Health Insurance Portability and Accountability Act) is a law in the U.S that requires data privacy and security for medical information.
+    Use environment variables to store your username and password, to avoid hard-coding username and password information in your code.
+    Avoid committing your passwords to git. Use .gitignore to define files that you do not want to commit to git.
+    IAM user role: an IAM role can give a user a set of permissions to access one or more services.
+    IAM service role: an IAM role gives a service a set of permissions to access one or more services.
+
+<img width="763" alt="Screenshot 2021-06-04 at 00 54 23" src="https://user-images.githubusercontent.com/57599753/120722086-68c5cd00-c4cf-11eb-8486-1fbf3c726cca.png">
+
+
+An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer. They are part of the environment in which a process runs. For example, a running process can query the value of the TEMP environment variable to discover a suitable location to store temporary files, or the HOME or USERPROFILE variable to find the directory structure owned by the user running the process. 
+
+It’s beneficial to create a role that contains a policy group (a set of permissions), rather than to assign individual permissions to a specific user. Imagine if a user leaves the company and a new hire takes their place. Instead of re-assigning all the permissions needed for their job, we can assign the existing IAM role to that new employee.
+
+New Features in AWS - Batch Operations
+
+Shortly after recording this segment, AWS released new ways of managing large-scale batch operations on Amazon S3 Objects. These are operations that can move, transform, or utilize the information within many file objects in your S3 bucket. You can read more about batch operations in the AWS S3 Developer Guide
+
+When creating a service profile and selecting all S3 actions, there will be a new field in the resources section to limit which jobs can be invoked on the bucket (graphic below). Your options are to:
+
+    select any so that this bucket has the right to call any job
+    create a job and reference it by its ARN
+    limiting the Policy actions (not selecting actions pertaining to jobs (i.e. CreateJob, DecribeJob, ListJobs).
+
+AWS is a constantly evolving tool and you'll always be learning the latest features that make it such a powerful system.
+
+Clarification on AWS Configuration Files
+
+In this video, we installed our Amazon Web Services credentials using the aws configure terminal command. This creates two new files on your local computer to save credentials and configurations.
+
+Each of these files can contain settings for multiple "profiles" which are defined by using hard brackets containing the profile name preceding the variables (i.e. [profile1]). For example, if you're working on two or three systems, you will need installed credentials for each. You can modify these files in your text editor of choice to add and edit profiles and select the appropriate profile at runtime of your application. Additional information on these files can be found in the AWS Docs.
+
+Below are some sample file contents with multiple profiles:
 
 
 
+~/.aws/credentials
+
+[default]
+aws_access_key_id=########################
+aws_secret_access_key=########################
+
+[profile1]
+aws_access_key_id=########################
+aws_secret_access_key=########################
+
+[profile2]
+aws_access_key_id=########################
+aws_secret_access_key=########################
+
+~/.aws/config
+
+[default]
+region=us-east-1
+
+[profile1]
+region=us-west-2
+
+[profile2]
+region=us-east-2
+
+    Mac and Linux Users these files are located in a hidden .aws directory in your home directory: ~/.aws/
+
+    Windows Users these files are located in C:\Users\ USERNAME .aws\config
 
 
 
