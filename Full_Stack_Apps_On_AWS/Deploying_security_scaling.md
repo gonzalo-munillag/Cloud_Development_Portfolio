@@ -48,6 +48,21 @@ The Decorators (also known as Annotations) mentioned in this video are a feature
 
 Read more and view complete details on the model definition in the sequelize-typescript docs
 
+## Organizing our code
+
+Features and Modularity
+
+In this concept, we dive into splitting our code into logical "features". This is a way of describing modular programming where the code which relates to one task is grouped together. In this example, the /feed and /auth endpoints are our features. All routing, models, business logic, and helper functions for these modules should be separated as much as possible. This way, we have an understanding of where code responsibilities just by looking at the general structure.
+
+Often one feature may depend on another feature - for example, user authentication will be needed within the feed. But these dependencies should be kept loose and consistent with only a few methods being consumed. The goal as the system continues to grow, is to minimize refactoring outside of specific features. As you continue to learn cloud and explore microservices, often entire features might be ported to their own servers infrastructure making this loose coupling even more critical.
+
+ntro to Object-Relational Maps (ORM)
+
+We'll be using an ORM called Sequelize to manage the connection to our database. We'll cover the basics in this concept, but Sequelize is a powerful tool and is extremely well documented at http://docs.sequelizejs.com/
+
+<img width="1147" alt="Screenshot 2021-06-15 at 19 20 06" src="https://user-images.githubusercontent.com/57599753/122096297-b404a780-ce0e-11eb-8b9e-edd238cb0985.png">
+
+
 
 # User authentication and security
 
