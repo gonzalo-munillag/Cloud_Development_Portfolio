@@ -6,7 +6,6 @@ Successful deployment:
 
 ![image](deployment_screenshots/udagram_successful_deployment.png)
 
-
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
 The project is split into three parts:
@@ -37,4 +36,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 ### Deploying your system
 
 Follow the process described in the course to `eb init` a new application and `eb create` a new environment to deploy your image-filter service! Don't forget you can use `eb deploy` to push changes.
+
+![postman1](deployment_screenshots/postman_test_1.png)
+![postman2](deployment_screenshots/postman_test_2.png)
+![postman3](deployment_screenshots/postman_test_3.png)
 
