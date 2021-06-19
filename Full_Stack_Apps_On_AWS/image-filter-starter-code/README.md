@@ -1,8 +1,8 @@
 # Udagram Image Filtering Microservice
 
-Successful deployment:
-
 URL: http://image-filter-starter-code2-dev.us-east-2.elasticbeanstalk.com/
+
+Successful deployment:
 
 ![image](deployment_screenshots/successful_deployment.png)
 
