@@ -133,9 +133,10 @@ Associations In Sequelize
 
 Check out the Sequelize documentation on associations to understand how to implement this pattern: http://docs.sequelizejs.com/manual/associations.html
 
-
-
-
 # User authentication and security
+
+
+
+
 
 # Scaling and fixing
