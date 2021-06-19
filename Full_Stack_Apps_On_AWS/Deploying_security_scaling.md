@@ -142,8 +142,12 @@ Salt Rounds: the password is passed through the salted hashing function, and the
 
 Comparing Passwords: When you're using the bcrypt.compare method, it may appear that the salt is ignored. However, if you look closely at the example outputs in the video above, it is clear that the salt is actually prepended to the hash which we are using in the compare method. In other words, when we save the hash in our database - it is storing both the salt and the resulting hash as one value. Then, when comparing the plain text password, the stored salt and hash are split and the salt is used to produce the new hash, which is ultimately what is being compared.
 
+Sessions, JWTs, and Environment Variables
 
+Our client can be a web browser or another server. In either of these cases, we need to send some authentication information along with each request.
 
+On our web browser, this is most commonly performed by storing some kind of credentials in something like the localstorage which allows us to store information for a specific site in a key-value store. JSON Web Tokens are one type of credential that can be stored locally in this fashion.
 
+On our servers, we'll usually want to use something like an environment variable. This is a variable which is accessible within that instance and only that instance.
 
 # Scaling and fixing
