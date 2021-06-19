@@ -1,6 +1,6 @@
 # Udagram Image Filtering Microservice
 
-URL: http://image-filter-starter-code2-dev.us-east-2.elasticbeanstalk.com/
+URL: http://image-filter-starter-code-gonzalo-dev.us-east-2.elasticbeanstalk.com/
 
 Successful deployment:
 
