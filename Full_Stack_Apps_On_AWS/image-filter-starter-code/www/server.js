@@ -38,20 +38,20 @@ const util_1 = require("./util/util");
         // 1. validate the image_url query
         // Error codes ref: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
         // From server.ts of exercise Udacity basic server
-        let { image_URL } = req.query;
-        if (!image_URL) {
-            return res.status(400).send("Bad request. The server could not understand the request due to invalid syntax. Rewrite the URL.");
+        let image_url = req.query.image_url;
+        if (!image_url) {
+            return res.status(422).send("Unprocessable Entity. The server could not understand the request due to invalid syntax. Rewrite the URL.");
         }
         else {
             return res.status(202).send("Good request.");
         }
         // 2. call filterImageFromURL(image_url) to filter the image
         // use await for the asynchornous function: https://knowledge.udacity.com/questions/151148
-        let filtered_image_URL = yield util_1.filterImageFromURL(image_URL);
+        let filtered_image_url = yield util_1.filterImageFromURL(image_url);
         // 3. send the resulting file in the response
         // 4. deletes any files on the server on finish of the response
         // ref, from instructor: https://knowledge.udacity.com/questions/151148
-        return res.status(200).sendFile(filtered_image_URL, () => util_1.deleteLocalFiles([filtered_image_URL]));
+        return res.status(200).sendFile(filtered_image_url, () => util_1.deleteLocalFiles([filtered_image_url]));
     }));
     //! END @TODO1
     // Root Endpoint
