@@ -142,8 +142,65 @@ Salt Rounds: the password is passed through the salted hashing function, and the
 
 Comparing Passwords: When you're using the bcrypt.compare method, it may appear that the salt is ignored. However, if you look closely at the example outputs in the video above, it is clear that the salt is actually prepended to the hash which we are using in the compare method. In other words, when we save the hash in our database - it is storing both the salt and the resulting hash as one value. Then, when comparing the plain text password, the stored salt and hash are split and the salt is used to produce the new hash, which is ultimately what is being compared.
 
+Sessions, JWTs, and Environment Variables
 
+Our client can be a web browser or another server. In either of these cases, we need to send some authentication information along with each request.
 
+On our web browser, this is most commonly performed by storing some kind of credentials in something like the localstorage which allows us to store information for a specific site in a key-value store. JSON Web Tokens are one type of credential that can be stored locally in this fashion.
 
+On our servers, we'll usually want to use something like an environment variable. This is a variable which is accessible within that instance and only that instance.
 
 # Scaling and fixing
+
+<img width="694" alt="Screenshot 2021-06-19 at 20 53 06" src="https://user-images.githubusercontent.com/57599753/122652701-5d65d900-d140-11eb-83d3-b84d1281b38b.png">
+
+A name serevr is kind of like a lookup table.
+
+You have A records, which direclty point to a specific IP address. a Cname record point to another name and is an alias.
+
+AWS Route 53 Developer Guide
+
+Amazon Web Services' flavor of DNS is called Route53. This service allows you to set up routing profiles for your domain names and direct traffic to services inside of and external to AWS.
+
+Amazon provides great documentation on using Route53 in their developer guide.
+
+Using CDNs to Serve Our Frontend
+
+Our frontend is loosely coupled and can be served from a separate server than our backend. This allows us to create static build artifacts (pure html/css/javascript files that can be directly used by a browser) that can be served efficiently using content delivery networks.
+
+
+Deploying the frontend using AWS S3 and CloudFront
+
+The static build artifacts in the www/ directory can be uploaded to an S3 bucket which can be linked to a CloudFront distribution. This is beyond the scope of required work for this course, but it is a good skill to practice.
+
+Amazon provides a great resource to configure S3 and CloudFront to accomplish this goal: https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-serve-static-website/
+
+What are some of the benefits of Scaling Out over Scaling Up
+
+    The number of instances can be changed dynamically to meet demand
+
+    The available compute can easily exceed the upper limit of a single very powerful machine
+
+AWS Autoscaling Group Autoscaling Triggers
+
+AWS offers a detailed article on all of the options to scale your elastic beanstalk deployments: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environments-cfg-autoscaling-triggers.html
+
+Testing Concurrency
+
+As a cloud developer, you'll often want to test how your cloud will react and perform under high load. Siege is a lightweight CLI tool to create a large number of concurrent requests to simulate this kind of situation. It's strongly encouraged to read the manual and, if you're up for it, try issuing some siege tests on your local development RestAPI server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
