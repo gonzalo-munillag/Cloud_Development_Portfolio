@@ -36,9 +36,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
     if (!image_url) {
       return res.status(422).send("Unprocessable Entity. The server could not understand the request due to invalid syntax. Rewrite the URL.");
-    } else {
-      return res.status(202).send("Good request.");     
-    }
+    } 
 
     // 2. call filterImageFromURL(image_url) to filter the image
     // use await for the asynchornous function: https://knowledge.udacity.com/questions/151148
