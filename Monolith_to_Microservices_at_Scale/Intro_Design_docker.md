@@ -375,4 +375,40 @@ Base Images
 In the build and deploy process, building Docker Images can take up most of the time. One strategy to reduce build times is to utilize a base image. This reduces redundant operations that might stay the same across multiple builds. For example, if you are building a new Docker image with a few lines of new application logic, we may find the build time frustrating.
 
 
+Solution Recap
 
+    Our original Dockerfile contained a lot of code to install NodeJS that takes a long time to run.
+
+    Installing NodeJS is a redundant operation -- it shouldn't need to be reinstalled every time we build an image because we don’t expect to make changes to it.
+
+    By using a base image that has NodeJS installed, we can reduce the amount of time it takes to build an image for NodeJS and our application’s code. We would use a pre-existing image that already has NodeJS and just build on top of it for the application’s code.
+
+My Strategy
+
+First, create a base image:
+
+    Take the the block of code that installs the NodeJS dependencies and save it as a new Dockerfile (see below)
+
+    Build the Docker image and name it slow-node-base
+
+    Create a DockerHub repository for slow-node-base
+
+    Tag slow-node-base and add it to the DockerHub registry
+
+    docker tag slow-node-base <YOUR_DOCKER_HUB>/slow-node-base
+    docker push <YOUR_DOCKER_HUB>/slow-node-base
+
+
+Then, use the base image in our application.
+
+    Take a new copy of the starter Dockerfile and remove all of the code to install the dependencies, leaving only the custom logic of the application
+
+    Use the base image we just created by linking it using the FROM command:
+
+    FROM <YOUR_DOCKER_HUB>/slow-node-base:latest
+
+    Build the new image.
+
+    docker build -t slow-node .
+
+Notice how much more quickly the image is built since we essentially removed the overhead of installing NodeJS!
