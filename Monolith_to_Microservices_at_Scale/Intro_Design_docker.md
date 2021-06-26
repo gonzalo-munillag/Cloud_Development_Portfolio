@@ -104,6 +104,67 @@ Supercomputer vs Mainframe Computer
 # Design principles and best practices
 
 
+    Microservices are an architectural style where an application is composed of modules that can be independently developed and deployed.
+    In monoliths,all the components of the application are built into a single application.
+
+Microservice Benefits
+
+    Scale
+    Lean applications that are able to tailor their logic and infrastructure to their specific business needs. More-easily architected for horizontally-scaling.
+    Development in Parallel
+    Teams can develop and deploy their own codebases.
+    Cost Effectiveness
+    Utilize resources only for what is necessary for the specific microservice.
+    Flexibility Choose technologies that make the most sense for the team and business.
+
+<img width="794" alt="Screenshot 2021-06-26 at 15 05 53" src="https://user-images.githubusercontent.com/57599753/123513885-0310cf00-d690-11eb-8830-6b693ce629e9.png">
+
+<img width="794" alt="Screenshot 2021-06-26 at 15 06 19" src="https://user-images.githubusercontent.com/57599753/123513898-11f78180-d690-11eb-89fb-b6f8b87a8c9b.png">
+
+Any application that can be built as a monolith can be built as a microservice. It’s up to you to weigh out the benefits of choosing one over the other. Oftentimes, microservices are harder to manage and take more investment to initially set up.
+
+Properties of Microservices
+Communication
+
+    Services communicate through a network
+    REST is currently the most-commonly used network interface
+
+Independently Deployed
+
+    Deployment to one service should not affect another
+
+Fault tolerant
+
+    Diligence in writing code that can anticipate when another microservice isn’t working
+
+Term 	Definition
+REST 	Architectural style of communication across a network
+Fault Tolerance 	The ability to continue operating in the event of a failure
+Vertical Scaling 	Scaling by increasing the capacity of existing machines
+Horizontal Scaling 	Scaling by adding more machines
+
+
+Alternatives to REST
+
+While REST is the most popular form of network communication used for microservices, there are many other protocols that can be used. The following are some other ways microservices can communicate with one another:
+
+    Publish-Subscribe
+    Queues
+    gRPC
+    SOAP
+    GraphQL
+
+[GREAT REF](https://martinfowler.com/articles/microservices.html)
+
+Which of the following scenarios below describe problems that can occur when software is built as a monolith? (may be more than one answer)
+
+    A developer fixes a bug. Before deploying, the developer has to schedule a maintenance window for the whole company.
+
+    Team A has to wait until Team B is completed with their changes before they can deploy their changes.
+
+    An e-commerce website can’t load because their ads service has a bug.
+
+
 
 # Docker
 
