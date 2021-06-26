@@ -354,10 +354,9 @@ Image 	A snapshot of dependencies and code used by Docker containers to run an a
 
 [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
-
-
 In general, troubleshooting is the identification or diagnosis of "trouble" in the management flow of a system caused by a failure of some kind. The problem is initially described as symptoms of malfunction, and troubleshooting is the process of determining and remedying the causes of these symptoms. <img width="824" alt="Screenshot 2021-06-26 at 22 16 02" src="https://user-images.githubusercontent.com/57599753/123524658-193c8080-d6cc-11eb-9969-b06f0caa237b.png">
 
+You can troubleshoot inside a container
 
 
 
