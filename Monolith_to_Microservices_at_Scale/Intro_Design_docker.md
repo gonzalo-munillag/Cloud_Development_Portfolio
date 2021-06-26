@@ -291,6 +291,72 @@ Simplify Deployment
 
 [Docker vs. Virtual Machines](https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/)
 
-<img width="809" alt="Screenshot 2021-06-26 at 19 06 11" src="https://user-images.githubusercontent.com/57599753/123520630-e4233480-d6b1-11eb-88d8-04b86a3d80a0.png">
+<img width="794" alt="Screenshot 2021-06-26 at 19 08 00" src="https://user-images.githubusercontent.com/57599753/123520673-0fa61f00-d6b2-11eb-8031-cf79b16714b3.png">
+
+<img width="550" alt="Screenshot 2021-06-26 at 21 02 48" src="https://user-images.githubusercontent.com/57599753/123523106-edb49880-d6c1-11eb-8cfa-b8029e952ae0.png">
+
+Overview
+
+Docker is a platform that helps us manage the process of creating and managing our containers.
+Docker Image
+
+When we have an application that we want to deploy, we can package it into a Docker Image. The image contains all of your code and dependencies.
+Docker Container
+
+A Docker Container is an ephemeral running instance of a Docker Image.
+Dockerfile
+
+A Dockerfile defines the steps to create a Docker Image.
+
+Sample Dockerfile
+
+        # Use NodeJS base image
+        FROM node:13
+
+        # Create app directory in Docker
+        WORKDIR /usr/src/app
+
+        # Install app dependencies by copying
+        # package.json and package-lock.json
+        COPY package*.json ./
+
+        # Install dependencies in Docker
+        RUN npm install
+
+        # Copy app from local environment into the Docker image
+        COPY . .
+
+        # Set the API’s port number
+        EXPOSE 8080
+
+        # Define Docker’s behavior when the image is run
+        CMD ["node", "server.js"]
+
+Basic Commands:
+
+    docker build . will run the Dockerfile to create an image
+    docker images will print all the available images
+    docker run {IMAGE_ID} will run a container with the image
+    docker ps will print all the running containers
+    docker kill {CONTAINER_ID} will terminate the container
+
+Key Terms - Docker
+Term 	Definition
+Base Image 	A set of common dependencies built into a Docker image that acts as a starting point to build an application’s Docker images to reduce build times
+Container 	Grouped software dependencies and packages that make it easier and more reliable to deploy software
+Container Registry 	A centralized place to store container images
+Docker-compose 	A tool used to run multiple Docker containers at once; often used to specify dependent relationships between containers
+Dockerfile 	A file containing instructions on how to translate an application into an image that can be run in containers
+Ephemeral 	Software property where an application is expected to be short-lived
+Image 	A snapshot of dependencies and code used by Docker containers to run an application
+
+<img width="824" alt="Screenshot 2021-06-26 at 21 17 42" src="https://user-images.githubusercontent.com/57599753/123523466-ff973b00-d6c3-11eb-98f8-f1bf3323ce6e.png">
+
+[Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+
+
+
+
 
 
