@@ -19,6 +19,17 @@ Microservice
     Interfaces set up for building out other applications
     Try not to overcommit and pay for resources that aren't needed
 
+Glossary
+Term 	Definition
+Dependency Graph 	A diagram that maps out the relationships between components to understand which parts of the system rely on the other
+Fault Tolerance 	The ability to continue operating in the event of a failure
+Horizontal Scaling 	Scaling by adding more machines
+Module 	Program that is logically grouped together to execute a specific functionality
+REST 	Architectural style of communication across a network
+Strangler Pattern 	Strategy of refactoring code by incrementally replacing components of the codebase
+Technical Debt 	The concept of choosing an easier implementation of software that will need to be reworked
+Vertical Scaling 	Scaling by increasing the capacity of existing machines
+
 Deploying Code is Not Easy
 
 Deploying changes in code is non-trivial. We have to consider the impact of potential bugs, downtime, ease of deployment, and downstream effects to consumers of the application.
@@ -164,7 +175,79 @@ Which of the following scenarios below describe problems that can occur when sof
 
     An e-commerce website can’t load because their ads service has a bug.
 
+Using the Strangler Pattern
 
+Map Your Dependencies
+
+    It's important to understand the application you're working with before breaking it apart.
+    One strategy is to map out the modules and their dependencies as a directed graph to understand the downstream impact of your changes.
+
+Where to Start?
+
+    There’s no hard rule: choose the part of the application that makes the most sense to you.
+    Dependency graph serves merely as a guideline on risk based on the number of dependencies.
+    A module with the least dependencies will potentially have the downstream effects meaning less risk.
+
+How to Start?
+
+    The Strangler pattern is a common and effective way to migrate legacy applications.
+    Rather than replacing your code with a new version, you can gradually replace components of your application.
+
+Shared Code
+
+    Code duplication can be abstracted into common libraries used across projects.
+
+Key Terms - Refactoring
+Term 	Definition
+Dependency Graph 	A diagram that maps out the relationships between components to understand which parts of the system rely on the other
+Module 	Program that is logically grouped together to execute a specific functionality
+Strangler Pattern 	Strategy of refactoring code by incrementally replacing components of the codebase
+Technical Debt 	The concept of choosing an easier implementation of software that will need to be reworked
+
+[Strangler pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler-fig)
+
+[Dependency graph](https://en.wikipedia.org/wiki/Dependency_graph)
+
+<img width="809" alt="Screenshot 2021-06-26 at 18 36 50" src="https://user-images.githubusercontent.com/57599753/123519755-7c6aea80-d6ad-11eb-9585-9d1ef4213516.png">
+
+
+    Dependency graphs are one way to help us visualize and make an informed decision
+    We often have to use additional context with regards to business functionality to weigh decisions
+    Database complexity should also be considered for refactors. Services that seem simple may have complicated refactor strategies with their databases.
+
+Trade-Offs
+
+Designing software is not a binary process. There's rarely a right or wrong answer and it's often a decision of balancing both technical and business tradeoffs.
+
+Some trade-offs include
+
+    Cost of Infrastructure
+    Time of Development
+    Managing Technical Debt
+
+Scope of Refactor
+
+Microservices may not just be refactoring code. We also need to also consider other parts of the system including databases and infrastructure.
+
+[Refactoring Databases](https://www.martinfowler.com/books/refactoringDatabases.html)
+
+Microservice Benefits
+
+    Scale
+    Development in Parallel
+    Cost Effectiveness
+    Flexibility
+
+Microservice Properties
+
+    Communication
+    Independently Deployed
+    Fault tolerant
+
+Refactor Strategies
+
+    Dependency Graph as a starting point to understand downstream effects of modules
+    Strangler Pattern as an approach to how we gradually refactor our code in pieces
 
 # Docker
 
