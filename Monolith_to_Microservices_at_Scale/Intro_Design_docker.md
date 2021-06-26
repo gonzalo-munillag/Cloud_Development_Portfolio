@@ -251,3 +251,44 @@ Refactor Strategies
 
 # Docker
 
+
+Your Code is Not a Black Box...Yet
+
+    Applications often require many packages and dependencies to run properly
+    It’s common for an application to work on one computer but not another
+
+Deployment Headaches
+
+    Organizations often have different development environments. These often include development and production.
+    Deploying and testing the same code across different environments can be cumbersome
+    In practice, it’s difficult to keep a development and production environment perfectly synchronized with regards to their versions, operating systems, dependencies, etc.
+    It is common for code to work in a development environment and not behave as expected in production
+
+Your Code is Now Kind of a Black Box
+
+    Containers are self-contained applications with all the dependencies needed to run
+    Containers can be treated as one unit of deployment
+    Rolling back code with containers is simply re-deploying an older snapshot
+
+Why Kind of?
+
+    Containers make things easier but don’t magically make deployment problems disappear
+    Code may still work in one environment and fail in another, though now we have an understanding of what might have failed
+
+Containers are Ephemeral
+
+    Containers should be stateless and are expected to be destroyed.
+
+Containers Help Manage Dependencies
+
+    Each container can be running its own versioned software. We resolve the issue where different applications may have different dependencies.
+
+Simplify Deployment
+
+    Containers are self-contained so deployment is simply swapping out an existing container with a new one.
+
+<img width="809" alt="Screenshot 2021-06-26 at 19 06 11" src="https://user-images.githubusercontent.com/57599753/123520552-95759a80-d6b1-11eb-833e-49374f9b91e8.png">
+
+
+
+
