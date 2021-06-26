@@ -358,7 +358,21 @@ In general, troubleshooting is the identification or diagnosis of "trouble" in t
 
 You can troubleshoot inside a container
 
+Container Registry
 
+    A container registry serves as a centralized place for us to store and version our images.
+
+DockerHub
+
+    DockerHub is a popular container registry run by the same organization that created Docker.
+
+Base Images
+
+    Base images reduce time that it takes to run redundant operations.
+
+<img width="824" alt="Screenshot 2021-06-26 at 22 58 13" src="https://user-images.githubusercontent.com/57599753/123525571-fdd47400-d6d1-11eb-8720-e977b5c1e98a.png">
+
+In the build and deploy process, building Docker Images can take up most of the time. One strategy to reduce build times is to utilize a base image. This reduces redundant operations that might stay the same across multiple builds. For example, if you are building a new Docker image with a few lines of new application logic, we may find the build time frustrating.
 
 
 
