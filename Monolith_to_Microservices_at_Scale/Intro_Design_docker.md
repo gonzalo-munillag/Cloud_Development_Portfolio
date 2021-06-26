@@ -251,6 +251,15 @@ Refactor Strategies
 
 # Docker
 
+Term 	Definition
+Base Image 	A set of common dependencies built into a Docker image that acts as a starting point to build an application’s Docker images to reduce build times
+Container 	Grouped software dependencies and packages that make it easier and more reliable to deploy software
+Container Registry 	A centralized place to store container images
+Docker-compose 	A tool used to run multiple Docker containers at once; often used to specify dependent relationships between containers
+Dockerfile 	A file containing instructions on how to translate an application into an image that can be run in containers
+Ephemeral 	Software property where an application is expected to be short-lived
+Image 	A snapshot of dependencies and code used by Docker containers to run an application
+System Process 	A computer program run by the operating system
 
 Your Code is Not a Black Box...Yet
 
@@ -412,3 +421,10 @@ Then, use the base image in our application.
     docker build -t slow-node .
 
 Notice how much more quickly the image is built since we essentially removed the overhead of installing NodeJS!
+
+
+Docker images should be considered a single unit of deployment. You shouldn't be editing code or making changes to the system at all in a container. If something is broken, you build a new image and deploy that to a new container.
+
+<img width="824" alt="Screenshot 2021-06-26 at 23 37 39" src="https://user-images.githubusercontent.com/57599753/123526339-80136700-d6d7-11eb-8bc3-3c20ae50df4a.png">
+
+
