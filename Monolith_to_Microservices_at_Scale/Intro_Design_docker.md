@@ -289,6 +289,8 @@ Simplify Deployment
 
 <img width="809" alt="Screenshot 2021-06-26 at 19 06 11" src="https://user-images.githubusercontent.com/57599753/123520552-95759a80-d6b1-11eb-833e-49374f9b91e8.png">
 
+[Docker vs. Virtual Machines](https://cloudacademy.com/blog/docker-vs-virtual-machines-differences-you-should-know/)
 
+<img width="809" alt="Screenshot 2021-06-26 at 19 06 11" src="https://user-images.githubusercontent.com/57599753/123520630-e4233480-d6b1-11eb-88d8-04b86a3d80a0.png">
 
 
