@@ -103,6 +103,16 @@ Travis provides a way to set environment variables without having them exposed. 
 
 Different phases of our software development lifecycle can take advantage of environment variables. Travis, our tool for CI, enables us to set environment variables on a per-repository basis in the settings.
 
+Services like Travis have a business model based on the number of builds processed. What are some strategies in setting up your code in Git so that not every push will trigger a build?
+
+Use a separate branch for different features
+
+    Specify what kind of git action should trigger a build
+
+One strategy is to utilize the master branch for when your code is in a ready state. Use a separate branch while your code is still in active development and before it’s ready to be built into a Docker image. This provides flexibility in how we configure our build process: we can have different branches that Travis won’t automatically build and can have different environment variables configured for different branches.
+
+
+
 # Kubernetes
 
 # Production
