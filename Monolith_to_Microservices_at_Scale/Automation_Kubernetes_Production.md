@@ -122,8 +122,8 @@ Docker is more-or-less the defacto standard for containers. Build tools, on the 
     CircleCI - alternative to Travis CI with many competing features
     AWS CodeBuild - integrates easily with other AWS tools
 
-
-
 # Kubernetes
+
+
 
 # Production
