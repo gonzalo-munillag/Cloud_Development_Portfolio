@@ -229,6 +229,42 @@ Similar to the command that we used with Docker, we don’t want to rely on this
     
 # Production
 
+Kubernetes has configurations that can be tuned to optimize your deployed application.
+Cost
+
+    Configure the resources and replicas for our deployed applications.
+
+Security
+
+    Configure who has access to the Kubernetes pods and services.
+    Secure traffic for least-privilege
+
+A reverse proxy proxy is used to route traffic from one endpoint to multiple endpoints
+Reverse Proxy
+
+    A single interface that forwards requests on behalf of the client and appears to the client as the origin of the responses.
+    Useful for abstracting multiple microservices to appear as a single resource.
+
+API Gateway
+
+A form of a reverse proxy that serves as an abstraction of the interface to other services.
+Sample Reverse Proxy
+
+    Nginx is a web server that can be used as a reverse proxy. Configurations can be specified with an nginx.conf file.
+
+    Sample bare-bones nginx.conf file:
+
+events {
+}
+http {
+  server {
+      listen <PORT_NUMBER>;
+      location /<PROXY_PATH>/ {
+          proxy_pass http://<REDIRECT_PATH>/;
+      }
+  }
+}
+
 
 
 
