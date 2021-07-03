@@ -1,5 +1,10 @@
 # Automation
 
+Continuous Integration 	practice of streamlining developer code to a centralized source
+Continuous Deployment 	practice of streamlining how code is released
+Least Privileged Access 	providing the least amount of permissions necessary
+YAML 	Yet another markup language a common way to programmatically write configurations. Sometimes referred to as YML.
+
 Deploying environments: development -> staging -> production
 #Deployment pipeline: commit -> build (docker) -> testing -> deploy (containers)
 
