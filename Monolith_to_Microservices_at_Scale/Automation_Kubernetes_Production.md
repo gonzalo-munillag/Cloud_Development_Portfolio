@@ -124,6 +124,49 @@ Docker is more-or-less the defacto standard for containers. Build tools, on the 
 
 # Kubernetes
 
+Orchestration is the automated management of the lifecycle of our application
+
+    With CI/CD, if Travis is our CI tool, then Kubernetes is our CD tool
+    Orchestration helps us handle complicated workflows in deploying our application
+    Helps us automate our deployment process for continuous deployment
+
+A service is an abstraction of pods and pods are abstractions of containers
+
+New Terms
+Term 	Description
+Horizontal Scaling 	Handling increased traffic by creating additional replicas so that traffic can be divided across the replicas
+Kubernetes Service 	An abstraction of a set of pods and interface for how to interact with the pods
+Pods 	A set of containers that are deployed together
+Load Balancing 	Handling traffic by distributing it across different endpoints
+Replica 	A redundant copy of a resource often used for backups or load balancing
+Consumer 	An external entity such as a user or program that interfaces with an application
+
+Key Points
+
+    AWS EKS is a service that we can use to set up Kubernetes.
+
+    The deployment.yaml file is used to specify how our pods should be created.
+    The service.yaml file is used to specify how our pods are exposed.
+
+Creating an EKS Cluster
+
+    Create cluster in EKS
+    Create and specify role for Kubernetes cluster
+    Enable public access
+
+Creating a Node Group
+
+    Add Node Group in the newly-created cluster
+    Create and specify role for IAM role for node group
+    Create and specify SSH key for node group
+    Set instance type to t3.micro for cost-savings as we learn how to use Kubernetes
+    Specify desired number of nodes
+
+Docker images are loaded from the container registry into Kubernetes pods. Access to the pods are exposed to consumers through a service.
+
+<img width="732" alt="Screenshot 2021-07-03 at 17 40 18" src="https://user-images.githubusercontent.com/57599753/124359530-bd22b080-dc25-11eb-8f3f-e7b8cac0b116.png">
+
+
 
 
 # Production
