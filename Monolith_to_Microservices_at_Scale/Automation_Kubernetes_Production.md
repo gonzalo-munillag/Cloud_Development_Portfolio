@@ -166,7 +166,70 @@ Docker images are loaded from the container registry into Kubernetes pods. Acces
 
 <img width="732" alt="Screenshot 2021-07-03 at 17 40 18" src="https://user-images.githubusercontent.com/57599753/124359530-bd22b080-dc25-11eb-8f3f-e7b8cac0b116.png">
 
+Overview
+
+Kubernetes YAML files have many possible configurations and are very open-ended. The solution I have is one example of how we can set up our files.
+
+Some key areas to note are that:
+
+    kind: Deployment and kind: Service denotes how Kubernetes will process the file.
+    replicas specifies the number of replicas that we want. This corresponds to the number of pods that will be created for one deployment.
+    containers in deployment.yaml specifies the source for our Docker image
 
 
+At this point, we have a Kubernetes cluster set up and understand how YAML files can be created to handle the deployment of pods and expose them to consumers. Moving forward, we’ll be using the Kubernetes command-line tool, kubectl, to interact with our cluster.
+Interacting With Your Cluster
 
+    Install kubectl
+    Set up aws-iam-authenticator
+    Set up kubeconfig
+
+Loading YAML files
+
+    kubectl apply - create deployment and service
+
+kubectl apply -f deployment.yaml
+
+Introductory Commands
+
+kubectl provides a wide range of commands to interact with Kubernetes. The following are some basic commands that we can use to interact with our current cluster.
+
+    kubectl get pods - show the pods in the cluster
+    kubectl describe services - show the services in the cluster
+    kubectl cluster-info - display information about the cluster
+    aws eks --region <region> update-kubeconfig --name <K8s cluster name> - it takes the aws cluster and binds it with jubectl commands
+    
+We will be interfacing with our Kubernetes cluster with the Kubernetes command-line tool kubectl. The YAML files that we created will be loaded through this tool.
+    
+Key Points
+
+By loading these configuration files to the Kubernetes cluster, we have set up Kubernetes to pull the Docker image from DockerHub.
+
+To verify the functionality, we can run the commands kubectl get pods and kubectl describe services.
+    
+ Alternative Deployment Strategies
+
+Kubernetes is one solution for deploying your containers. It's packed with features but can sometimes be overwhelming. As we've mentioned before, choosing a tool comes with its own set of tradeoffs. Here are a few other popular technologies that are used in the industry today.
+
+    AWS EKS AWS' proprietary solution that predates AWS EKS. It integrates very well with other AWS tools and is a bit more straightforward as it is not as feature-packed as Kubernetes.
+
+    AWS Fargate AWS tool that helps streamline deploying containers to ECS and EKS.
+
+    Docker It's an option to simply run the container manually with Docker. Sometimes, it's tempting to pick a shiny hot tool that may lead to overengineered architectures.
+
+To attach to a container in a pod, we can use the following command:
+
+kubectl exec -it {pod_name} /bin/bash
+
+This is a powerful tool that allows us to run and test commands directly inside the context of our pods.
+
+Similar to the command that we used with Docker, we don’t want to rely on this command for modifying the code or state that’s running inside of the pod. The command should only be used for troubleshooting. Pods are ephemeral and we should create a new image to address any changes.
+
+"ps aux" is a command that can be run in a pod to check that it is running
+    
 # Production
+
+
+
+
+
