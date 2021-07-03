@@ -1,5 +1,95 @@
 # Automation
 
+Deploying environments: development -> staging -> production
+#Deployment pipeline: commit -> build (docker) -> testing -> deploy (containers)
+
+A deployment pipeline may contain stages for committing, building, testing, and deploying code
+
+    We now have industry standards and tools for how we can deploy our code.
+    Docker containers simplify what we deploy.
+    Deployment pipelines simplify how we deploy Docker containers.
+    Code is often deployed multiple times to different environments to validate functionality and minimize bugs.
+    Deployment pipelines enable us to have an automated process that is reliable and reproducible.
+
+Code After Coding
+
+Once your code is done, how do you ship it? Typically, the software development cycle will proceed with building the code, installing all of the dependencies, running automated tests, manually testing, and then repeating for each development environment the application needs to be deployed to.
+
+    It’s a common fallacy to underestimate the time it takes to deploy code
+    Teams deploying enterprise software often involves many internal and external dependencies that may include: infrastructure changes, security changes, permissions provisioning, load testing
+
+<img width="664" alt="Screenshot 2021-07-03 at 10 05 15" src="https://user-images.githubusercontent.com/57599753/124347686-2b478300-dbe6-11eb-8cbf-643557135c7e.png">
+
+CI/CD enables us to have a streamlined process for how our code transforms from being written to being deployed to production.
+Continuous Integration
+
+Continuous Integration: Process in which code is tested, built into a Docker image, and deployed to a container registry.
+Continuous Deployment: Process in which our Docker image is deployed to containers.
+Additional Benefits: By streamlining our build and deploy to an automated process, developers are provided the least privilege that they need to write their code.
+
+
+<img width="732" alt="Screenshot 2021-07-03 at 10 10 59" src="https://user-images.githubusercontent.com/57599753/124347850-f8ea5580-dbe6-11eb-8c8b-c586db01ab6e.png">
+
+<img width="664" alt="Screenshot 2021-07-03 at 10 10 40" src="https://user-images.githubusercontent.com/57599753/124347843-eec85700-dbe6-11eb-8435-23ddb31025f2.png">
+
+Term 	Definition
+Continuous Integration 	practice of streamlining developer code to a centralized source
+Continuous Deployment 	practice of streamlining how code is released
+Least Privileged Access 	providing the least amount of permissions necessary
+
+[The art of shipping early and often](https://www.ycombinator.com/library/40-the-art-of-shipping-early-and-often)
+
+A new Docker container is created to use the latest Docker image. - Continuous Deployment
+
+Reduce overhead of managing code after development is completed. - Both CI and CD
+
+Code is built automatically into a Docker image. - Continuous Integration
+
+Why do non-technical individuals at a business care about using CI/CD?
+
+    Security
+    Cost
+    Time
+
+Key Points
+
+    CI/CD allows for a tight feedback loop
+    Bugs are inevitable -- CI/CD helps us identify them in a deployed environment
+    CI/CD makes the pipeline more available
+
+By using a CI/CD pipeline, we reduce the risk of failed deployments from user error. All of these steps can become automated. If there is an issue with the deployed code, a user can revert the changes with an older container rather than backtracking by using older code and downgrading packages and dependencies.
+
+    Reduce risk of failed deployments
+    Connecting to a production environment is a security risk
+    Backing up the code is not always a comprehensive backup of the existing state since we may have other dependencies such as databases
+    Packages and dependencies may have to be downgraded and would introduce downtime
+
+By using a CI/CD pipeline, we reduce the risk of failed deployments from user error. All of these steps can become automated. If there is an issue with the deployed code, a user can revert the changes with an older container rather than backtracking by using older code and downgrading packages and dependencies.
+
+    Reduce risk of failed deployments
+    Connecting to a production environment is a security risk
+    Backing up the code is not always a comprehensive backup of the existing state since we may have other dependencies such as databases
+    Packages and dependencies may have to be downgraded and would introduce downtime
+
+TRAVIS CI
+
+Code repository -> Travis CI -> Container Repository
+
+    Travis is a tool that helps us with the CI process
+    Travis integrates with your application using a YAML file
+    YAML files are often used to specify configurations.
+    Travis can be used to build and push images to DockerHub
+
+YAML
+Yet another markup language a common way to programmatically write configurations. Sometimes referred to as YML.
+
+YAML is similar to how JSON is also used as a representation of data but YAML is considered more readable.
+
+    YAML is generally suited for configuration files
+    YAML is generally suited for expressing data.
+
+When used as configurations, they are often interchangeable. The examples below show how a YAML file can be represented as JSON.
+
 # Kubernetes
 
 # Production
