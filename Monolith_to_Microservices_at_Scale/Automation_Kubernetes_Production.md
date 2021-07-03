@@ -90,6 +90,19 @@ YAML is similar to how JSON is also used as a representation of data but YAML is
 
 When used as configurations, they are often interchangeable. The examples below show how a YAML file can be represented as JSON.
 
+Environment Variables
+
+Environment variables are a useful way to handle variables that shouldn’t be hard-coded into our application. These values are often credentials that shouldn’t be stored in the code.
+Environment Variables with Travis
+
+Travis provides a way to set environment variables without having them exposed. These values will be used during the Travis build process.
+
+    In your TravisCI dashboard, navigate to a repository
+    Navigate to the Settings screen
+    Set values in Environment Variables
+
+Different phases of our software development lifecycle can take advantage of environment variables. Travis, our tool for CI, enables us to set environment variables on a per-repository basis in the settings.
+
 # Kubernetes
 
 # Production
