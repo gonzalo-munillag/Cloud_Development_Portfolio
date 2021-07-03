@@ -111,6 +111,12 @@ Use a separate branch for different features
 
 One strategy is to utilize the master branch for when your code is in a ready state. Use a separate branch while your code is still in active development and before it’s ready to be built into a Docker image. This provides flexibility in how we configure our build process: we can have different branches that Travis won’t automatically build and can have different environment variables configured for different branches.
 
+Docker is more-or-less the defacto standard for containers. Build tools, on the other hand, aren’t as standardized. Travis is one of many CI/CD tools that are popular. Other ones include Jenkins, CircleCI, AWS CodeBuild. You may choose one depending on your business needs.
+
+    Jenkins - most flexible but more overhead of setup
+    CircleCI - alternative to Travis CI with many competing features
+    AWS CodeBuild - integrates easily with other AWS tools
+
 
 
 # Kubernetes
