@@ -265,6 +265,18 @@ http {
   }
 }
 
+<img width="732" alt="Screenshot 2021-07-06 at 19 56 19" src="https://user-images.githubusercontent.com/57599753/124645865-3d4e4d80-de94-11eb-92c3-fba3d18fe40a.png">
+
+<img width="732" alt="Screenshot 2021-07-06 at 20 08 21" src="https://user-images.githubusercontent.com/57599753/124647185-eb0e2c00-de95-11eb-8adf-354dfc2168f5.png">
+
+Both are used to abstract common code, recudes complexity of the code.
+
+Library contains common code that must be imported into our service, the logic is abstracted there is overhaed of managing the library, eg, version has to be consistent. The libraries are limited to the same programming language. 
+
+API garteway is an abstraction of the interface, the common code and common logic is limited to inputs and outputs. We are unable to use an APi gateway for logic that may happen exclsuisvely inside a microservice. The points of abstraction are not as flexible as a library, but but we inly need to implement the logic once and the microservice it points do not need to care. since an API gateway is its own service, it has its own tech stack. This means that even if we have two microservices using different programming languages, we can still have an abstraction of common logic.
+
+
+Given a large organization, how may a dedicated team working on an API Gateway (type of reverse proxy) be beneficial from a technical and business perspective?An API Gateway can be considered its own business functionality. This will allow another team to work on its features in parallel to the services that it would route to. It would also reduce the responsibilities of individual teams by abstracting common logic that may be non-trivial to design and implement.
 
 
 
