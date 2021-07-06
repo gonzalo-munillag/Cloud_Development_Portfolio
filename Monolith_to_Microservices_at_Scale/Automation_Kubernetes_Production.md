@@ -279,5 +279,85 @@ API garteway is an abstraction of the interface, the common code and common logi
 Given a large organization, how may a dedicated team working on an API Gateway (type of reverse proxy) be beneficial from a technical and business perspective?An API Gateway can be considered its own business functionality. This will allow another team to work on its features in parallel to the services that it would route to. It would also reduce the responsibilities of individual teams by abstracting common logic that may be non-trivial to design and implement.
 
 
+#### Security
+
+This is not an all-inclusive list of things to do for securing your application. It means that while some of these are best-practice, there's no guarantee that these steps will ensure your application is perfectly secure.
+
+    AWS security groups Enables you to restrict the inbound and outbound traffic for AWS resources.
+    Kubernetes Ingress and Egress Enables you to restrict the inbound and outbound traffic for Kubernetes resources.
+
+Key Terms - Securing Microservices
+Term 	Definition
+Ingress 	Inbound web traffic
+Egress 	Outbound web traffic
+
+Given a microservice that is only interfaced through a reverse proxy, what is the best option to securing this microservice?
+
+    Set the microservice to only allow ingress traffic from the reverse proxy.
+
+Self-Healing
+
+Kubernetes deployments can be set up to recover from failure.
+
+    Health checks - an HTTP endpoint that must return a 200 response for a healthy status. Kubernetes will periodically ping this endpoint.
+    Replicas - Kubernetes will attempt to maintain the number of desired replicas. If a pod is terminated, it will automatically recreate the pod.
+
+Horizontal Pod Autoscaler
+
+A deployment feature that allows additional pods to be created when a CPU usage threshold is reached.
+
+Term 	Description
+Horizontal Pod Autoscaler (HPA) 	A Kubernetes deployment feature that allows additional pods to be created when a CPU usage threshold is reached.
+Liveness Probe 	A monitoring activity that occurs at scheduled intervals to ping a health check API endpoint to validate that the application is in a healthy state.
+Resilience 	The property of an application to handle and recover from failures.
+
+What are some things that would be useful to check in an application’s health check endpoint?
+
+    Database connectivity
+Why do we choose to use horizontal scaling over vertical scaling with our microservices?
+
+    Horizontal scaling is more cost effective
+
+
+We can set up a Kubernetes HPA with the following command:
+
+kubectl autoscale deployment <DEPLOYMENT_NAME> --cpu-percent=<DESIRED_THRESHOLD> --min=<MIN_PODS> --max=<MAX_PODS>
+
+We can view the Kubernetes HPA with the following command:
+
+kubectl get hpa
+
+Note that for Kubernetes to be able to handle scaling our application, we will need sufficient Node Groups created in EKS.
+
+
+Key Points
+
+    Software is rarely free of errors so we need to troubleshoot errors when they occur.
+
+    In production environments we don't have tools like breakpoints that could help us identify bugs
+
+    Logging can get complicated so we need tools to handle logs and make it easy to search them.
+
+    System logs used for debugging are sometimes different from error messages returned by API's.
+
+Strategies for Logging
+
+    Use timestamps to know when the activity occurred
+    Set a consistent style of logging to make it easier to parse log output
+    Use process IDs to trace an activity
+    Rotate logs so they don't fill up your storage
+    Include stack traces in your logs
+    Look at the delta in message timestamps to measure execution time
+
+Additional Resources
+
+For more resources on learning about logs:
+
+    Best Practices for Monitoring
+    Netflix Scalable Logging and Tracking
+    Designing a Logging Strategy
+
+
+
 
 
