@@ -357,6 +357,16 @@ For more resources on learning about logs:
     Netflix Scalable Logging and Tracking
     Designing a Logging Strategy
 
+#### Logging
+
+<img width="732" alt="Screenshot 2021-07-06 at 20 52 23" src="https://user-images.githubusercontent.com/57599753/124652183-17c54200-de9c-11eb-8a25-5e0f1d52d33f.png">
+
+If we have multiple pods running in Kubernetes and all of our logs are centralized into a single file, what are some difficulties with determining the execution time of an API request?
+Replicas will poduce similar logs as they execute the same code. Thus, we need to use a unique id to help us trace logs from the same request.
+
+
+
+
 
 
 
