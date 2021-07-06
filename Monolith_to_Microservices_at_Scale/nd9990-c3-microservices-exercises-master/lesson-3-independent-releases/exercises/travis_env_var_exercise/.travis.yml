@@ -15,9 +15,11 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
+  - docker build -t env_var --build-arg NAME=${NAME}
+  - docker tag env_var "$DOCKER_USERNAME"/travis_ci:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node
+  - docker push lomuga/travis_ci
+
+
