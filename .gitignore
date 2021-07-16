@@ -1,6 +1,10 @@
 # env vars
 set_env.sh
 
+aws-secret.yaml
+aws-configmap.yaml
+env-secret.yaml
+
 # Logs
 logs
 *.log
