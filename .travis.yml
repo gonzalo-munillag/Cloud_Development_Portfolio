@@ -17,7 +17,7 @@ script:
   - docker --version # print the version for logging
   - docker build -t udagram-api-feed ./Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/udagram-api-feed
   - docker build -t udagram-api-user ./Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/udagram-api-user
-  - docker build -t reverseproxy ./Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/reverseproxy
+  - docker build -t reverseproxy ./Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/udagram-reverseproxy
   - docker build -t udagram-frontend ./Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/udagram-frontend  
   - docker tag udagram-api-feed lomuga/udagram-api-feed:v1
   - docker tag udagram-api-user lomuga/udagram-api-user:v1
