@@ -12,12 +12,14 @@ spec:
   template:
     metadata:
       labels:
-        service:udagram-frontend
+        service: udagram-frontend
     spec:
       containers:
-        - image: lomuga/udagram-frontend
+        - image: lomuga/udagram-frontend:v1
           name: udagram-frontend
           imagePullPolicy: Always
+          ports:
+          - containerPort: 80
           resources:
             requests:
               memory: "64Mi"
