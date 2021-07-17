@@ -2,9 +2,9 @@
 set_env.sh
 
 # config files
-aws-secret.yaml
-aws-configmap.yaml
-env-secret.yaml
+Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/deployments/aws-secret.yaml
+Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/deployments/aws-configmap.yaml
+Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/deployments/env-secret.yaml
 
 # pws
 IAM_udagram_user_udacity.rtf
