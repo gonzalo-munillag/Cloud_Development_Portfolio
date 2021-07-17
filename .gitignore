@@ -1,6 +1,14 @@
 # env vars
 set_env.sh
 
+# config files
+aws-secret.yaml
+aws-configmap.yaml
+env-secret.yaml
+
+# pws
+IAM_udagram_user_udacity.txt
+
 # Logs
 logs
 *.log
