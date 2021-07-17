@@ -6,7 +6,8 @@ metadata:
     run: udagram-api-feed
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+  - port: 8080
+    name: "8080"
+    targetport: 8080
   selector:
     run: udagram-api-feed

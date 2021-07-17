@@ -15,7 +15,7 @@ spec:
         service: udagram-api-feed
     spec:
       containers:
-        - image: lomuga/udagram-api-feed
+        - image: lomuga/udagram-api-feed:v1
           name: udagram-api-feed
           imagePullPolicy: Always
           resources:
