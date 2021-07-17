@@ -12,10 +12,10 @@ spec:
   template:
     metadata:
       labels:
-        service:udagram-api-user
+        service: udagram-api-user
     spec:
       containers:
-        - image: lomuga/udagram-api-user
+        - image: lomuga/udagram-api-user:v1
           name: udagram-api-user
           imagePullPolicy: Always
           resources:
@@ -75,6 +75,8 @@ spec:
             - name: aws-secret
               mountPath: "/root/.aws/"
               readOnly: true
+      imagePullSecrets:
+        - name: regcred      
       restartPolicy: Always
       volumes:
         - name: aws-secret
