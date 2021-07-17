@@ -24,9 +24,14 @@ git pull\
 \
 To check which url is set\
 \pard\pardeftab720\partightenfactor0
-\cf2 \outl0\strokewidth0 \strokec2 git config --get remote.origin.url\
+\cf2 git config --get remote.origin.url\
+\
+To undo a pull command on the local repo\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 git reset _number_ --hard\
 \pard\pardeftab720\partightenfactor0
 \cf2 \outl0\strokewidth0 \
+You can find _number_ in the previous pull\
 \
 OR\
 git init -b main\
@@ -39,8 +44,7 @@ $ git remote -v\
 git push -u origin main\
 \
 # to teel git to stop pushing a file\
-\pard\pardeftab720\partightenfactor0
-\cf2 git rm --cached <file_name>\
+git rm --cached <file_name>\
 \
 Error with pushing, main vs master: https://stackoverflow.com/questions/64601716/error-src-refspec-main-does-not-match-any-error-failed-to-push-some-refs-to-u\
 \
