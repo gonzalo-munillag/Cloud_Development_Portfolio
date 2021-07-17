@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: udagram-api-user
   labels:
-    run: udagram-api-user
+    service: udagram-api-user
 spec:
   ports:
   - name: "8080"
     port: 8080
     targetPort: 8080
   selector:
-    run: udagram-api-user
+    service: udagram-api-user
