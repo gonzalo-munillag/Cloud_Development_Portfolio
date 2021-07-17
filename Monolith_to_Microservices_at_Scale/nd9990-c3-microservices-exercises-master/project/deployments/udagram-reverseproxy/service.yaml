@@ -8,6 +8,6 @@ spec:
   ports:
   - port: 8080
     name: "8080"
-    targetport: 8080
+    protocol: TCP
   selector:
     service: reverseproxy
