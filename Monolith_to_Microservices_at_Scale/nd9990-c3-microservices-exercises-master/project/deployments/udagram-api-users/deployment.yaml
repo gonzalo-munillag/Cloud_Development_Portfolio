@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-deployment
+  labels:
+    app: udagram-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: udagram-deployment
+  template:
+    metadata:
+      labels:
+        app: udagram-deployment
+    spec:
+      containers:
+      - name: udagram-frontend
+        image: lomuga/udagram-frontend
+        ports:
+        - containerPort: 80
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+        initialDelaySeconds: 3
+        periodSeconds: 3
