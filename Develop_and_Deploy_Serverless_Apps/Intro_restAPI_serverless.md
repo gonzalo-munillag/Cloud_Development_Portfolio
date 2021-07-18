@@ -227,6 +227,31 @@ a valid json is a valid yaml, but not the other way around
 <img width="1149" alt="Screenshot 2021-07-18 at 17 59 47" src="https://user-images.githubusercontent.com/57599753/126074041-ad0009ad-8ab6-460d-a520-6a661770bcec.png">
 
 
+<img width="1149" alt="Screenshot 2021-07-18 at 18 04 27" src="https://user-images.githubusercontent.com/57599753/126074174-1a2c2316-d249-4b12-ae95-4c2567b5d5f3.png">
+
+[Serverless framework catalog](https://www.serverless.com/plugins/)
+
+<img width="1149" alt="Screenshot 2021-07-18 at 18 08 24" src="https://user-images.githubusercontent.com/57599753/126074298-c1878039-45e0-4fd1-bef1-523c067fd26c.png">
+<img width="1149" alt="Screenshot 2021-07-18 at 18 10 34" src="https://user-images.githubusercontent.com/57599753/126074359-7a66acec-83b3-4db7-aeb8-f61bf3ef431a.png">
+
+How Serverless framework is deploying an application
+
+    Relies on CloudFormation service to create all resources
+
+<img width="827" alt="Screenshot 2021-07-18 at 18 12 43" src="https://user-images.githubusercontent.com/57599753/126074433-21e3328a-5a55-4fd8-bd4e-8f47e5f3ee6a.png">
+
+<img width="1148" alt="Screenshot 2021-07-18 at 18 14 34" src="https://user-images.githubusercontent.com/57599753/126074495-5d072eb1-9212-44cb-a885-f6e69630f82b.png">
+
+CloudFormation is a services for creation and management of AWS resources
+
+CloudFormation allows us to
+
+    Write YAML/JSON config file
+    Changes state of AWS resources
+    Version control the infrastructure
+
+CloudFormation is free and we only need to pay for created resources.
+
 
 
 
