@@ -72,6 +72,15 @@ When we use a Request/response method: If there's an error in the function, then
 
 When we use an Async method: Instead of returning an error to the user, AWSLambda will return HTTP 202 code to the user and it will store a request into an internal queue. Additionally, it will try to call the Lambda function up to 3 times. If all of those times result into an error, then it will store the event into a "dead-letter queue", which stores all the events that the Lambda function failed to process.
 
+When is an event sent to a Lambda function added to a Dead Letter Queue?
+
+If an asynchronous invocation fails after three unsuccessful attempts
+
+Async/await can only be used in an asynchronous function. An asynchronous function is identified by the async prefix.
+
+Solution Outline
+To run our function we use a service called CloudWatch, which periodically generates events. Those events are sent to the Lambda function, and on each event, the Lambda function gets a list of instances from the environment and will randomly terminate one of them.
+
 
 # REST API
 
