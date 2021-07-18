@@ -209,6 +209,11 @@ Fortunately the probability of this event is so low that we can safely ignore it
 UUID
 
 
+<img width="943" alt="Screenshot 2021-07-18 at 17 18 30" src="https://user-images.githubusercontent.com/57599753/126073107-50cf8891-1f87-4b1c-a7ce-ee26badf3505.png">
+
+Preflight response
+
+<img width="1149" alt="Screenshot 2021-07-18 at 17 44 16" src="https://user-images.githubusercontent.com/57599753/126073498-e62be597-640d-4de9-97de-3e1f6c754f0a.png">
 
 
 
