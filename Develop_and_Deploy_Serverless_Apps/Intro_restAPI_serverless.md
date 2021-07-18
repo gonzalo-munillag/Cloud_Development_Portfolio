@@ -156,5 +156,62 @@ API Gateway Stage is a logical reference to a lifecycle state of the REST API im
 <img width="946" alt="Screenshot 2021-07-18 at 16 32 02" src="https://user-images.githubusercontent.com/57599753/126071190-3eceef8b-40f2-4b7c-9b2f-396657c18880.png">
 <img width="946" alt="Screenshot 2021-07-18 at 16 32 40" src="https://user-images.githubusercontent.com/57599753/126071193-29949f2b-daff-4811-ba75-c407c3e9cabe.png">
 
+Single-Origin request policy is enabled in all browsers by default and is an important security measure. To send requests from a web application to a different domain (e.g. from localhost to API Gateway domain) we need to configure Cross-Origin request policy in our API.
+
+Alternatively, we need to configure our application so that JavaScript would be served from the same domain that is used for our REST API, but this goes beyond the scope of this course.
+
+[AWS database types](https://aws.amazon.com/products/databases/)
+
+DynamoDB - NoSQL
+not relational
+key-value store
+document datastore - compley docs
+scalable
+100k requets
+low latency
+high availability - process requests without errors
+serverless
+schemaless - except key fields
+query via API - no rich query language
+ACID transactions - update multiple items in multiple tables, and either all of them succeed or none do
+update streams - react to updates in tables
+global tables - allow to have a single table in multiple regions that are updated simunlataneously
+back-ups
+
+Tables
+
+Relational DB
+<img width="946" alt="Screenshot 2021-07-18 at 16 45 51" src="https://user-images.githubusercontent.com/57599753/126071625-ec68fcd5-5a60-4dc1-a7ea-4f5c84b74b58.png">
+
+Dynamo
+<img width="946" alt="Screenshot 2021-07-18 at 16 46 23" src="https://user-images.githubusercontent.com/57599753/126071651-9dc23b57-bc7b-4492-95af-3be928b1b1be.png">
+
+value types, scalar: storng, number, binary, boolean, null
+complex: list, sets, map
+
+<img width="619" alt="Screenshot 2021-07-18 at 16 48 02" src="https://user-images.githubusercontent.com/57599753/126071698-3c163199-9f95-401d-9ce9-fad8d4df6e51.png">
+
+f - hash function
+<img width="943" alt="Screenshot 2021-07-18 at 16 49 51" src="https://user-images.githubusercontent.com/57599753/126071754-bccb6c52-9243-496d-99d2-f4766fdff40d.png">
+
+DynamoDB Capacity Modes
+
+DynamoDB has two capacity modes:
+
+    Provisioned capacity - we need to define the maximum amount of read/write requests DynamoDB can handle. The higher the limit we set, the more we have to pay per month. Requests are throttled if we go above the specified limit.
+    On-Demand - DynamoDB will handle as many requests as we send, and we pay per-request. Can be more expensive comparing to Provisioned capacity, but is better for applications with unpredictable traffic patterns
+
+In this course Lambda functions generate random UUIDs and use them as IDs of created items. They do not check if these UUIDs are unique, so you might be wondering, what would happen if two function calls generate the same ID? This is called a collision, and depending on how we configure a request it will either overwrite an existing item or will cause an error.
+
+Fortunately the probability of this event is so low that we can safely ignore it in practice. Because of this UUIDs are commonly used as IDs in databases.
+
+
+UUID
+
+
+
+
+
+
 
 # Serverless framework
