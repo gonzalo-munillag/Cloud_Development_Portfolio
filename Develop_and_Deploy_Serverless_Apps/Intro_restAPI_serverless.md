@@ -256,6 +256,34 @@ API validation requests follow a JSON schema.
 
 <img width="1148" alt="Screenshot 2021-07-18 at 18 53 11" src="https://user-images.githubusercontent.com/57599753/126075634-4448c8f3-6ef0-41a1-aed0-b1c650872636.png">
 
+Composite key
+
+A composite key in DynamoDB consists of two elements
+
+    Partition key - what partition to write item to
+    Sort key - to sort elements with the same partition key
+
+Together - uniquely identify an item, meaning there can be no two items in a table with the same values of composite key.
+
+NOTE. If a table has a composite key, there can be multiple items with the same partition key, providing they have different values of sort key.
+
+Composite keys allows to perform queries, that can be used to get a subset of items with a specified partition key.
+
+DynamoDB supports two indexes types:
+
+Local secondary index (LSI):
+
+    Like an additional sort key
+    Allows to sort items by a different attribute
+    Added on the data in a table
+
+Global secondary index (GSI)
+
+    Allows to define a new partition key for the same data
+    Allows to define a new partition and sort key for the same data
+    Creates copy of the data in a table (data is available via GSI after some delay)
+
+
 
 
 
