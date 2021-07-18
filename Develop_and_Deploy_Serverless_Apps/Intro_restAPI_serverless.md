@@ -81,6 +81,15 @@ Async/await can only be used in an asynchronous function. An asynchronous functi
 Solution Outline
 To run our function we use a service called CloudWatch, which periodically generates events. Those events are sent to the Lambda function, and on each event, the Lambda function gets a list of instances from the environment and will randomly terminate one of them.
 
+Context parameter:
+
+<img width="954" alt="Screenshot 2021-07-18 at 13 32 14" src="https://user-images.githubusercontent.com/57599753/126065454-ff256e62-d24d-4adc-b031-a6e74d46eab2.png">
+
+<img width="715" alt="Screenshot 2021-07-18 at 13 36 40" src="https://user-images.githubusercontent.com/57599753/126065516-f24e453d-af7e-48d2-ab30-9a25ffac0b0b.png">
+
+[Should I use Lambd?](https://servers.lol/)
+
+<img width="715" alt="Screenshot 2021-07-18 at 13 40 42" src="https://user-images.githubusercontent.com/57599753/126065611-956c2681-cdeb-4c74-93a0-fdf3a4c2cc24.png">
 
 # REST API
 
