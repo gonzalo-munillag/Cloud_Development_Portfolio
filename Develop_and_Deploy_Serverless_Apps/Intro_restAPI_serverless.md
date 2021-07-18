@@ -57,6 +57,21 @@ AWS took care of
 How functions are executed
 When we send a request to execute a Lambda function, AWSLambda creates an environment to run that function. It starts a container for the specific environment and loads the function code into the environment. Then it sends an event to our function. The same process is repeated for all the other requests coming in.
 
+<img width="1041" alt="Screenshot 2021-07-18 at 12 34 57" src="https://user-images.githubusercontent.com/57599753/126064033-a952c801-6e8d-4af3-84a0-598f8ef6893c.png">
+
+In this demo we show how to invoke a function using AWS CLI.
+To recap, there are 3 invocation types:
+
+    Request/response
+    Asynchronous invocation
+    Using AWS CLI
+
+Errors are handled differently, depending on how we execute our function.
+
+When we use a Request/response method: If there's an error in the function, then it will return immediately to the caller, which can process the error from the Lambda function.
+
+When we use an Async method: Instead of returning an error to the user, AWSLambda will return HTTP 202 code to the user and it will store a request into an internal queue. Additionally, it will try to call the Lambda function up to 3 times. If all of those times result into an error, then it will store the event into a "dead-letter queue", which stores all the events that the Lambda function failed to process.
+
 
 # REST API
 
