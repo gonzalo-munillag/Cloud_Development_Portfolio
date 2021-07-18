@@ -93,4 +93,63 @@ Context parameter:
 
 # REST API
 
+When implementing REST API with AWS Lambda our functions receive HTTP requests in the form of events. Each event contains information like HTTP method, HTTP body, headers, etc.
+
+A Lambda function should process this event and return a response that will be converted by AWS into an HTTP response.
+
+Traditional RESTAPI
+
+Multiple instances across regions, a load balancer, autoscaling, databases per instance.
+
+When implementing REST API with AWS Lambda our functions receive HTTP requests in the form of events. Each event contains information like HTTP method, HTTP body, headers, etc.
+
+A Lambda function should process this event and return a response that will be converted by AWS into an HTTP response.
+
+What is API Gateway
+
+    Entry point for API users
+    Pass requests to other services
+    Process incoming requests
+
+API Gateway targets
+
+<img width="1314" alt="Screenshot 2021-07-18 at 14 10 21" src="https://user-images.githubusercontent.com/57599753/126066459-855a2991-0836-41d7-8b2d-3ca7d00e2654.png">
+
+Possible targets for an HTTP request processed by API Gateway:
+
+    Lambda Function - call a Lambda function
+    HTTP Endpoint - call a public HTTP endpoint
+    AWS Service - send a request to an AWS service
+    Mock - return a response without calling a backend
+    VPC Link - access resource in an Amazon Virtual Private Cloud (VPC)
+    
+    <img width="1314" alt="Screenshot 2021-07-18 at 14 14 06" src="https://user-images.githubusercontent.com/57599753/126066585-55af7b4b-4f88-403c-a68d-6414fb675b2e.png">
+
+However, it is recommened to use samll functions.
+
+<img width="1314" alt="Screenshot 2021-07-18 at 14 19 16" src="https://user-images.githubusercontent.com/57599753/126066726-45930e4b-4159-4c4f-abcb-23922dfd3463.png">
+<img width="1314" alt="Screenshot 2021-07-18 at 14 19 50" src="https://user-images.githubusercontent.com/57599753/126066750-ccf65111-58aa-4aae-9ee0-d9765ce7a593.png">
+<img width="1314" alt="Screenshot 2021-07-18 at 14 20 31" src="https://user-images.githubusercontent.com/57599753/126066780-a95c1d12-e5a8-44ce-86c6-7a8c3fcda028.png">
+
+What endpoint type in API Gateway directs all requests through a CloudFront distribution?
+
+    Edge optimized
+
+Lambda integration models:
+
+<img width="1314" alt="Screenshot 2021-07-18 at 14 24 34" src="https://user-images.githubusercontent.com/57599753/126066922-b919b520-b4b4-4c8b-bba9-c6262af40058.png">
+
+
+Velocity template langugae: defines a temp,ate, builds output frmo the template.
+
+Lambda integration modes
+
+    Proxy - passes all request information to a Lambda function. Easier to use.
+    Non-proxy - allows to transform incoming request using Velocity Template Language
+
+![Screenshot 2021-07-18 at 14 29 58](https://user-images.githubusercontent.com/57599753/126067095-5ec2d1b2-e990-4480-85d9-2c421c7976f7.png)
+
+API Gateway Stage is a logical reference to a lifecycle state of the REST API implementation.
+
+
 # Serverless framework
