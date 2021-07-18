@@ -1,7 +1,3 @@
-<img width="1148" alt="Screenshot 2021-07-18 at 18 53 11" src="https://user-images.githubusercontent.com/57599753/126075634-4448c8f3-6ef0-41a1-aed0-b1c650872636.png">
-<img width="1148" alt="Screenshot 2021-07-18 at 18 53 11" src="https://user-images.githubusercontent.com/57599753/126075610-29d65b50-ab67-475c-b5f8-b43ffa4ae9f1.png">
-<img width="1148" alt="Screenshot 2021-07-18 at 18 53 11" src="https://user-images.githubusercontent.com/57599753/126075615-2892e645-c775-45a1-a873-0bbe43561cb3.png">
-<img width="1148" alt="Screenshot 2021-07-18 at 18 53 11" src="https://user-images.githubusercontent.com/57599753/126075617-53985483-c982-4757-b817-d1f9f342afd5.png">
 # Introduction
 
 What is "Serverless"?
@@ -258,6 +254,7 @@ CloudFormation is free and we only need to pay for created resources.
 
 API validation requests follow a JSON schema.
 
+<img width="1148" alt="Screenshot 2021-07-18 at 18 53 11" src="https://user-images.githubusercontent.com/57599753/126075634-4448c8f3-6ef0-41a1-aed0-b1c650872636.png">
 
 
 
