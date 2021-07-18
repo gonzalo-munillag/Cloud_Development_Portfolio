@@ -151,5 +151,10 @@ Lambda integration modes
 
 API Gateway Stage is a logical reference to a lifecycle state of the REST API implementation.
 
+<img width="946" alt="Screenshot 2021-07-18 at 16 25 37" src="https://user-images.githubusercontent.com/57599753/126070932-ba9dae93-6245-4c73-b498-6735905969c4.png">
+<img width="946" alt="Screenshot 2021-07-18 at 16 31 17" src="https://user-images.githubusercontent.com/57599753/126071187-0d0a18a8-3000-44fa-a81b-87d5b60f9dab.png">
+<img width="946" alt="Screenshot 2021-07-18 at 16 32 02" src="https://user-images.githubusercontent.com/57599753/126071190-3eceef8b-40f2-4b7c-9b2f-396657c18880.png">
+<img width="946" alt="Screenshot 2021-07-18 at 16 32 40" src="https://user-images.githubusercontent.com/57599753/126071193-29949f2b-daff-4811-ba75-c407c3e9cabe.png">
+
 
 # Serverless framework
