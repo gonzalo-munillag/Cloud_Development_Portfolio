@@ -215,8 +215,19 @@ Preflight response
 
 <img width="1149" alt="Screenshot 2021-07-18 at 17 44 16" src="https://user-images.githubusercontent.com/57599753/126073498-e62be597-640d-4de9-97de-3e1f6c754f0a.png">
 
-
-
-
-
 # Serverless framework
+
+<img width="1149" alt="Screenshot 2021-07-18 at 17 52 43" src="https://user-images.githubusercontent.com/57599753/126073767-2d68f23f-c4dd-4f53-a0fb-764cfc974120.png">
+
+[YAML tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
+
+
+a valid json is a valid yaml, but not the other way around
+
+<img width="1149" alt="Screenshot 2021-07-18 at 17 59 47" src="https://user-images.githubusercontent.com/57599753/126074041-ad0009ad-8ab6-460d-a520-6a661770bcec.png">
+
+
+
+
+
+
