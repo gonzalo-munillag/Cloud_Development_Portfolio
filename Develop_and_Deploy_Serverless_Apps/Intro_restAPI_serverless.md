@@ -78,7 +78,7 @@ If an asynchronous invocation fails after three unsuccessful attempts
 
 Async/await can only be used in an asynchronous function. An asynchronous function is identified by the async prefix.
 
-Solution Outline
+Solution Outline  
 To run our function we use a service called CloudWatch, which periodically generates events. Those events are sent to the Lambda function, and on each event, the Lambda function gets a list of instances from the environment and will randomly terminate one of them.
 
 Context parameter:
@@ -97,13 +97,7 @@ When implementing REST API with AWS Lambda our functions receive HTTP requests i
 
 A Lambda function should process this event and return a response that will be converted by AWS into an HTTP response.
 
-Traditional RESTAPI
-
-Multiple instances across regions, a load balancer, autoscaling, databases per instance.
-
-When implementing REST API with AWS Lambda our functions receive HTTP requests in the form of events. Each event contains information like HTTP method, HTTP body, headers, etc.
-
-A Lambda function should process this event and return a response that will be converted by AWS into an HTTP response.
+Traditional RESTAPI: Multiple instances across regions, a load balancer, autoscaling, databases per instance.
 
 What is API Gateway
 
