@@ -48,7 +48,33 @@ What operations can we perform on a data stream
     Add an element to the end of a stream
 
 Read an element from an arbitrary position
-![Screenshot 2021-07-21 at 13 48 58](https://user-images.githubusercontent.com/57599753/126483978-3e8ba1b8-ee9d-43d1-9f89-6d9975d1d9f8.png)
+
+<img width="1066" alt="Screenshot 2021-07-21 at 13 50 25" src="https://user-images.githubusercontent.com/57599753/126484127-a6baf870-cbc2-49f0-b169-04a663f5730d.png">
+<img width="1066" alt="Screenshot 2021-07-21 at 13 50 34" src="https://user-images.githubusercontent.com/57599753/126484138-c4ca58c2-f331-431b-acaf-90341b450be8.png">
+<img width="1066" alt="Screenshot 2021-07-21 at 14 12 33" src="https://user-images.githubusercontent.com/57599753/126486510-70863307-c02f-436f-ab1c-1aac3a396455.png">
+
+
+SNS is a service to send messages to other services.
+
+It has two main concepts:
+
+    Publishers - publish messages
+    Subscribers - consume incoming messages
+
+Publishers and subscribers communicate via topics:
+
+    A publisher publish a message to a topic
+    A subscriber receives a message if it is subscribed to a topic
+    One topic can have many subscribers
+    Subscribers can use various protocols: Lambda, HTTP, email, SMS, etc.
+
+<img width="1066" alt="Screenshot 2021-07-21 at 14 15 34" src="https://user-images.githubusercontent.com/57599753/126486868-62a66961-b217-429b-b07b-87c053098e30.png">
+
+What is the reason why we are using Simple Notification Service in our application?
+
+S3 does not allow to send events to multiple targets
+
+
 
 
 # Authentication
