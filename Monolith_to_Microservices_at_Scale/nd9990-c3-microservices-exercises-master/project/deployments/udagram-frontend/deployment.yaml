@@ -17,7 +17,7 @@ spec:
         api: external
     spec:
       containers:
-      - image: lomuga/udagram-frontend:v1
+      - image: lomuga/udagram-frontend:v2
         name: udagram-frontend
         imagePullPolicy: Always
         ports:

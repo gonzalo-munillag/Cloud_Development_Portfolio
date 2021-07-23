@@ -16,7 +16,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: lomuga/reverseproxy:v1
+      - image: lomuga/reverseproxy:v2
         name: reverseproxy
         imagePullPolicy: Always
         resources:

@@ -15,7 +15,7 @@ spec:
         service: udagram-api-user
     spec:
       containers:
-        - image: lomuga/udagram-api-user:v1
+        - image: lomuga/udagram-api-user:v2
           name: udagram-api-user
           imagePullPolicy: Always
           resources:
