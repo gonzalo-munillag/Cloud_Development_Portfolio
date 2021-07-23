@@ -6,7 +6,13 @@ The project is split into two parts:
 1. Frontend - Angular web application built with Ionic Framework
 2. Backend RESTful API - Node-Express application
 
-## Getting Started
+# Deliverables
+
+![1](Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/Images/Containers_locally/1)
+
+![1](Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/Images/Containers_locally/2)
+
+# Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
 
 ### Prerequisite
