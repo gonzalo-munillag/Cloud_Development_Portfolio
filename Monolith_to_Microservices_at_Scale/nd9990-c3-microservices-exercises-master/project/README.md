@@ -42,9 +42,7 @@ Containers deplyoed locally
 
 ![15](Images/15.png)
 
-![](Images/216.png)
-
-![2](Images/2.png)
+![](Images/16.png)
 
 # Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
