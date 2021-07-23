@@ -8,41 +8,41 @@ The project is split into two parts:
 
 # Deliverables
 
-#### Containers deplyoed locally
+### Containers deplyoed locally
 
 ![1](Images/1.png)
 
 ![2](Images/2.png)
 
-#### YML file for Travis included in the repo (note that it is in a higher level repo, I did this so that all this course could be contained in a single repo)
+### YML file for Travis included in the repo (note that it is in a higher level repo, I did this so that all this course could be contained in a single repo)
 
 ![3](Images/3.png)
 
-#### Successful build in Travis
+### Successful build in Travis
 
 ![4](Images/4.png)
 
 ![5](Images/5.png)
 
-Images are in DockerHub
+### Images are in DockerHub
 
 ![6](Images/6.png)
 
 ![7](Images/7.png)
 
-#### I carried out the tests in Postman for the local application
+### I carried out the tests in Postman for the local application
 
 ![8](Images/8.png)
 
 ![9](Images/9.png)
 
-#### The bucket policy and CORS are added
+### The bucket policy and CORS are added
 
 ![10](Images/10.png)
 
 ![11](Images/11.png)
 
-##### The Kubernetes cluster is deployed in AWS with the CLI
+#### The Kubernetes cluster is deployed in AWS with the CLI
 
 ![12](Images/12.png)
 
@@ -50,11 +50,11 @@ Images are in DockerHub
 
 ![14](Images/14.png)
 
-####  All pods running and user has a replica
+###  All pods running and user has a replica
 
 ![17](Images/17.png)
 
-#### Services do not expose sensitive information
+### Services do not expose sensitive information
 
 ![18](Images/18.png)
 
@@ -62,7 +62,11 @@ Images are in DockerHub
 
 ![20](Images/20.png)
 
-#### Autosacling is set
+### Autosacling is set
+
+Using command 
+kubectl autoscale deployment <name of service>  --cpu-percent=50 --min=1 --max=10
+
 
 ![21](Images/21.png)
 
