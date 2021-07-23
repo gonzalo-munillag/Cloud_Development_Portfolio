@@ -62,6 +62,14 @@ Images are in DockerHub
 
 ![20](Images/20.png)
 
+#### Autosacling is set
+
+![21](Images/21.png)
+
+![22](Images/22.png)
+
+![23](Images/23.png)
+
 
 # Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
