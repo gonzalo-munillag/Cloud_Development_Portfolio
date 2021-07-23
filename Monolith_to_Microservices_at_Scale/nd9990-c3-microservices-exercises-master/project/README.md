@@ -50,11 +50,18 @@ Images are in DockerHub
 
 ![14](Images/14.png)
 
+####  All pods running and user has a replica
 
+![17](Images/17.png)
 
-![15](Images/15.png)
+#### Services do not expose sensitive information
 
-![](Images/16.png)
+![18](Images/18.png)
+
+![19](Images/19.png)
+
+![20](Images/20.png)
+
 
 # Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
