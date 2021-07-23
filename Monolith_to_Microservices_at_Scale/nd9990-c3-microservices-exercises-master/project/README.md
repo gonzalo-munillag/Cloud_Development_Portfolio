@@ -8,9 +8,9 @@ The project is split into two parts:
 
 # Deliverables
 
-![1](Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/Images/Containers_locally/1)
+![1](Cloud_Development_Portfolio/Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/Images/Containers_locally/1.png)
 
-![1](Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/Images/Containers_locally/2)
+![2](Cloud_Development_Portfolio/Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/Images/Containers_locally/2.png)
 
 # Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
