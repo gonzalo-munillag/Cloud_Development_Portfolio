@@ -1,3 +1,4 @@
+<img width="767" alt="Screenshot 2021-07-24 at 10 54 43" src="https://user-images.githubusercontent.com/57599753/126863242-8a5d17e1-3eed-483f-b75e-97ffd2751de8.png">
 # Event processing
 
 <img width="1066" alt="Screenshot 2021-07-21 at 13 01 07" src="https://user-images.githubusercontent.com/57599753/126478516-66d9c0d6-d02f-47ec-9de9-d11f00b7179a.png">
@@ -91,6 +92,19 @@ The best soution for the showed case example:
 
 <img width="1087" alt="Screenshot 2021-07-24 at 10 50 53" src="https://user-images.githubusercontent.com/57599753/126863140-0dece01c-0b41-4fb2-8e9a-8168526d8d57.png">
 
+A server-side cookie is a type of cookie that is set by an HTTP server, but its value will not be available to JavaScript code running in a browser. A value of a server-side cookie is only available to a browser, and it will automatically send with requests as a normal cookie. Since a cookie is not available to JavaScript code running in a browser it cannot be accessed by any malicious code. If a JWT token is stored in a server-side cookie it can be used for authentication in a more secure fashion.
 
+Notice that in this course and in many other examples online JWT tokens are stored in a local storage. While this is a simpler option that is sufficient for demos it is not secure and is discouraged.
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 13 56" src="https://user-images.githubusercontent.com/57599753/126863853-e963a67d-079c-41c4-829d-258c1020a449.png">
+<img width="1147" alt="Screenshot 2021-07-24 at 11 14 33" src="https://user-images.githubusercontent.com/57599753/126863881-4a83a615-ad64-48fb-b7c9-499f083ed071.png">
+
+What are some good options to store secrets used by AWS Lambda functions?
+
+    SSM Parameter Store
+
+    AWS Secrets Manager
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 17 04" src="https://user-images.githubusercontent.com/57599753/126863981-8632f476-f726-45a2-9d57-ba016652ca3b.png">
 
 # Best practices
