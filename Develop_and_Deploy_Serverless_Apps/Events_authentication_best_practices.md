@@ -1,4 +1,4 @@
-<img width="767" alt="Screenshot 2021-07-24 at 10 54 43" src="https://user-images.githubusercontent.com/57599753/126863242-8a5d17e1-3eed-483f-b75e-97ffd2751de8.png">
+
 # Event processing
 
 <img width="1066" alt="Screenshot 2021-07-21 at 13 01 07" src="https://user-images.githubusercontent.com/57599753/126478516-66d9c0d6-d02f-47ec-9de9-d11f00b7179a.png">
@@ -98,6 +98,8 @@ Notice that in this course and in many other examples online JWT tokens are stor
 
 <img width="1147" alt="Screenshot 2021-07-24 at 11 13 56" src="https://user-images.githubusercontent.com/57599753/126863853-e963a67d-079c-41c4-829d-258c1020a449.png">
 <img width="1147" alt="Screenshot 2021-07-24 at 11 14 33" src="https://user-images.githubusercontent.com/57599753/126863881-4a83a615-ad64-48fb-b7c9-499f083ed071.png">
+
+<img width="767" alt="Screenshot 2021-07-24 at 10 54 43" src="https://user-images.githubusercontent.com/57599753/126863242-8a5d17e1-3eed-483f-b75e-97ffd2751de8.png">
 
 What are some good options to store secrets used by AWS Lambda functions?
 
