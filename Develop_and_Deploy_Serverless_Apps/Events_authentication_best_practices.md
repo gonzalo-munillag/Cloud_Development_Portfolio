@@ -74,9 +74,23 @@ What is the reason why we are using Simple Notification Service in our applicati
 
 S3 does not allow to send events to multiple targets
 
-
-
-
 # Authentication
+
+This is not efficient:
+
+<img width="1087" alt="Screenshot 2021-07-24 at 10 44 23" src="https://user-images.githubusercontent.com/57599753/126862985-78c9495f-4d47-47f8-8621-70ec386cdc1c.png">
+
+<img width="1087" alt="Screenshot 2021-07-24 at 10 46 58" src="https://user-images.githubusercontent.com/57599753/126863038-4dc169b0-3d68-48e0-a283-e3139ba738fe.png">
+
+This is better:
+
+<img width="1087" alt="Screenshot 2021-07-24 at 10 46 35" src="https://user-images.githubusercontent.com/57599753/126863031-6db52cb8-6a16-4056-ba65-6ffab9060eb7.png">
+<img width="1087" alt="Screenshot 2021-07-24 at 10 49 08" src="https://user-images.githubusercontent.com/57599753/126863084-8f43b6a7-1f56-49a7-b83c-907329ed7f53.png">
+
+The best soution for the showed case example:
+
+<img width="1087" alt="Screenshot 2021-07-24 at 10 50 53" src="https://user-images.githubusercontent.com/57599753/126863140-0dece01c-0b41-4fb2-8e9a-8168526d8d57.png">
+
+
 
 # Best practices
