@@ -5,7 +5,8 @@ import { CreateTodoRequest } from '../requests/CreateTodoRequest'
 import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
 import { createLogger } from '../utils/logger'
 import * as uuid from 'uuid'
-import * as createError from 'http-errors'
+// debugging with serverless comand line deployment
+// import * as createError from 'http-errors'
 
 // TODO: Implement businessLogic
 

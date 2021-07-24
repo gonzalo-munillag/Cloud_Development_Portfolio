@@ -1,10 +1,12 @@
 import { CustomAuthorizerEvent, CustomAuthorizerResult } from 'aws-lambda'
 import 'source-map-support/register'
 
-import { verify, decode } from 'jsonwebtoken'
+// import { verify, decode } from 'jsonwebtoken'
+import { verify } from 'jsonwebtoken'
+
 import { createLogger } from '../../utils/logger'
-import Axios from 'axios'
-import { Jwt } from '../../auth/Jwt'
+// import Axios from 'axios'
+// import { Jwt } from '../../auth/Jwt'
 import { JwtPayload } from '../../auth/JwtPayload'
 
 const logger = createLogger('auth')
@@ -13,7 +15,7 @@ const logger = createLogger('auth')
 // to verify JWT token signature.
 // To get this URL you need to go to an Auth0 page -> Show Advanced Settings -> Endpoints -> JSON Web Key Set
 // defined in env vars
-const jwksUrl = process.env.AUTH_0_JSON_WEB_KEY_SET_URL
+// const jwksUrl = process.env.AUTH_0_JSON_WEB_KEY_SET_URL
 // but we can use the secret directly with this
 const authosecret = process.env.AUTH_0_SECRET
 

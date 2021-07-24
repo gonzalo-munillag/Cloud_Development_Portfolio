@@ -1,7 +1,7 @@
 # TODO: Change the name of the org 
-org: udacitodos # here 
+org: gonzalomunillag # here 
 app: serverless-todo-app
-service: serverless-todo-app
+service: serverless-todo-service
 
 # I added one plugin according to best practices
 plugins:
@@ -27,7 +27,7 @@ provider:
   environment:
     TODOS_TABLE: Todos-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    ATTACHMENT_S3_BUCKET: serverless-c4-todo-images-${self:provider.stage}
+    ATTACHMENT_S3_BUCKET: serverless-gonzalo-munillag${self:provider.stage}
     # ref https://auth0.com/docs/tokens/json-web-tokens/json-web-key-sets
     AUTH_0_JSON_WEB_KEY_SET_URL: https://dev-gp7-ugub.us.auth0.com/.well-known/jwks.json # in the end I do not use it
     AUTH_0_SECRET: GcOIbAy975Cu8OEOJvFzd6EIaShid5BZ6jfX5yOxv2mjFRkA_DPZIIZn7TwD0C6S
@@ -62,6 +62,7 @@ functions:
           path: todos
           cors: true
           authorizer: Auth
+          reqValidatorName: RequestBodyValidator # here
     iamRoleStatements: # here
       - Effect: Allow
         Action:
@@ -118,7 +119,7 @@ functions:
           reqValidatorName: RequestBodyValidator # here
           request: # here, from above 
             schema:
-              'application/json': ${file(models/update-todo-request.json)}
+              'application/json': ${file(models/update-todo-model.json)}
     iamRoleStatements: # here
       - Effect: Allow
         Action:
@@ -166,6 +167,7 @@ functions:
           path: todos/{todoId}/attachment
           cors: true # here
           authorizer: Auth # here
+          reqValidatorName: RequestBodyValidator # here
     iamRoleStatements: # here
       - Effect: Allow
         Action:
