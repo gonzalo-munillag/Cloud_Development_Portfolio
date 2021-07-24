@@ -108,3 +108,34 @@ What are some good options to store secrets used by AWS Lambda functions?
 <img width="1147" alt="Screenshot 2021-07-24 at 11 17 04" src="https://user-images.githubusercontent.com/57599753/126863981-8632f476-f726-45a2-9d57-ba016652ca3b.png">
 
 # Best practices
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 22 47" src="https://user-images.githubusercontent.com/57599753/126864136-598b24ff-15c6-4d0f-bbd3-5689c0158ae0.png">
+
+Adapters architecture:
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 24 38" src="https://user-images.githubusercontent.com/57599753/126864179-c1b24978-e417-4a9f-a7ea-a5b3185b7a24.png">
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 36 16" src="https://user-images.githubusercontent.com/57599753/126864465-6f2e7383-16c6-4070-b141-ebedc31517f8.png">
+
+What descriptions most accurately characterizes a process of canary deployment?
+
+Migrate traffic to the new version gradually and rollback if any problems occur
+
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 37 58" src="https://user-images.githubusercontent.com/57599753/126864504-10aee916-a144-43fe-b6ca-8cc680d44c5c.png">
+<img width="1147" alt="Screenshot 2021-07-24 at 11 39 32" src="https://user-images.githubusercontent.com/57599753/126864538-6527f6e5-b114-42ab-a85a-94c9ede78f5a.png">
+<img width="1147" alt="Screenshot 2021-07-24 at 11 40 37" src="https://user-images.githubusercontent.com/57599753/126864566-382af401-dda3-43f1-b13e-a413311d2ae9.png">
+<img width="1147" alt="Screenshot 2021-07-24 at 11 41 33" src="https://user-images.githubusercontent.com/57599753/126864590-f1d57238-4298-46de-8ad4-788d013ea0c9.png">
+
+Cold start
+<img width="1147" alt="Screenshot 2021-07-24 at 11 50 22" src="https://user-images.githubusercontent.com/57599753/126864808-3d04cf6c-f0ef-4615-8da7-3b109e576773.png">
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 51 35" src="https://user-images.githubusercontent.com/57599753/126864833-82af4a42-4fb3-4b05-b76a-70bb0bcaa828.png">
+<img width="1147" alt="Screenshot 2021-07-24 at 11 52 36" src="https://user-images.githubusercontent.com/57599753/126864854-6b2ed8cb-ddc2-466d-bbd1-02eb0bc3b601.png">
+
+Security
+
+<img width="1147" alt="Screenshot 2021-07-24 at 11 53 40" src="https://user-images.githubusercontent.com/57599753/126864885-b413778b-0483-4180-b64c-76895f7b6600.png">
+<img width="1147" alt="Screenshot 2021-07-24 at 11 54 10" src="https://user-images.githubusercontent.com/57599753/126864900-24f6f3f3-164b-42f0-8e6e-58027c1679b9.png">
+
+
