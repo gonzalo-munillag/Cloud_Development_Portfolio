@@ -11,3 +11,5 @@ spec:
     targetPort: 8080
   selector:
     service: reverseproxy
+  type: LoadBalancer 
+  
