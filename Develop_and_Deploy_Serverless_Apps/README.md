@@ -4,4 +4,4 @@
 
 [Event processing, authentication, and best practices](https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/blob/main/Develop_and_Deploy_Serverless_Apps/Events_authentication_best_practices.md)
 
-[Project - Serverless Social media app](https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/tree/main/Develop_and_Deploy_Serverless_Apps/project/c4-final-project-starter-code)
+[Project - Serverless Social media app](https://github.com/gonzalo-munillag/Cloud_Development_Portfolio/tree/main/Develop_and_Deploy_Serverless_Apps/project)
