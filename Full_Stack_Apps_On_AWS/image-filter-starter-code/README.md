@@ -1,7 +1,5 @@
 # Udagram Image Filtering Microservice
 
-URL: http://image-filter-gonzalo-dev-dev.us-east-2.elasticbeanstalk.com/
-
 Successful deployment:
 
 ![image](deployment_screenshots/success_in_deployment.png)
