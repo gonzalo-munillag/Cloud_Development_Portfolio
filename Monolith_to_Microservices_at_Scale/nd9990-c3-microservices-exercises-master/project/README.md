@@ -74,6 +74,15 @@ kubectl autoscale deployment <name of service>  --cpu-percent=50 --min=1 --max=1
 
 ![23](Images/23.png)
 
+Screenshot of one of the backend API pod logs indicates user activity that is logged when an API call is made.
+
+Feed and user backend pod logs:
+
+
+![24](Images/24.png)
+
+![25](Images/25.png)
+
 
 # Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
