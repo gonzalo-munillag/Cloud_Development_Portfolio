@@ -10,6 +10,8 @@ import { createLogger } from '../../utils/logger';
 
 const logger = createLogger('createTodo');
 
+// lesson 6 lambdas were very useful for the http .ts files
+
 export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     const newTodo: CreateTodoRequest = JSON.parse(event.body)

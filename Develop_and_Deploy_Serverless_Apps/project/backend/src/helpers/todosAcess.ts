@@ -11,6 +11,7 @@ import { TodoUpdate } from '../models/TodoUpdate';
 
 const XAWS = AWSXRay.captureAWS(AWS)
 
+// The mentor help section of the course was very useful 
 
 const logger = createLogger('TodosAccess')
 
