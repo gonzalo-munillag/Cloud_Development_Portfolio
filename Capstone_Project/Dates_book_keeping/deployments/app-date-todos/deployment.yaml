@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: udagram-api-feed
-  name: udagram-api-feed
+    service: app-date-todos
+  name: app-date-todos
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: udagram-api-feed
+      service: app-date-todos
   template:
     metadata:
       labels:
-        service: udagram-api-feed
+        service: app-date-todos
     spec:
       containers:
-      - image: lomuga/udagram-api-feed:v2
-        name: udagram-api-feed
+      - image: lomuga/app-date-todos:v1
+        name: uapp-date-todos
         imagePullPolicy: Always
         resources:
           requests:
@@ -31,11 +31,6 @@ spec:
             configMapKeyRef:
               name: env-config
               key: URL
-        - name: AWS_BUCKET
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: AWS_BUCKET
         - name: AWS_PROFILE
           valueFrom:
             configMapKeyRef:
@@ -51,26 +46,6 @@ spec:
             configMapKeyRef:
               name: env-config
               key: JWT_SECRET
-        - name: POSTGRESS_DB
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: POSTGRESS_DB
-        - name: POSTGRESS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: POSTGRESS_HOST
-        - name: POSTGRESS_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRESS_PASSWORD
-        - name: POSTGRESS_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRESS_USERNAME
         volumeMounts:
           - name: aws-secret
             mountPath: "/root/.aws/"
