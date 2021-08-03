@@ -1,13 +1,19 @@
 import { CustomAuthorizerEvent, CustomAuthorizerResult } from 'aws-lambda'
 import 'source-map-support/register'
 
-// import { verify, decode } from 'jsonwebtoken'
-import { verify } from 'jsonwebtoken'
+import { verify, decode } from 'jsonwebtoken'
 
 import { createLogger } from '../../utils/logger'
 // import Axios from 'axios'
 // import { Jwt } from '../../auth/Jwt'
 import { JwtPayload } from '../../auth/JwtPayload'
+
+// Changes based on https://knowledge.udacity.com/questions/159762
+import Axios from 'axios' // changed
+import { Jwt } from '../../auth/Jwt' // changed
+
+// from instroctor Juan https://knowledge.udacity.com/questions/164768
+import * as util from 'util';
 
 const logger = createLogger('auth')
 
@@ -15,9 +21,9 @@ const logger = createLogger('auth')
 // to verify JWT token signature.
 // To get this URL you need to go to an Auth0 page -> Show Advanced Settings -> Endpoints -> JSON Web Key Set
 // defined in env vars
-// const jwksUrl = process.env.AUTH_0_JSON_WEB_KEY_SET_URL
+const jwksUrl = process.env.AUTH_0_JSON_WEB_KEY_SET_URL
 // but we can use the secret directly with this
-const authosecret = process.env.AUTH_0_SECRET
+//const authosecret = process.env.AUTH_0_SECRET
 
 export const handler = async (
   event: CustomAuthorizerEvent
@@ -70,7 +76,48 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
   // You should implement it similarly to how it was implemented for the exercise for the lesson 5
   // You can read more about how to do this here: https://auth0.com/blog/navigating-rs256-and-jwks/
   // here
-  return verify(token, authosecret) as JwtPayload 
+
+  // Trying Juan's (instrucotr) code: https://knowledge.udacity.com/questions/164768
+  const response = await Axios.get(jwksUrl);
+  const jwks = response.data;
+  const keys:any[] = jwks.keys;
+  logger.info("jwks - "+util.inspect(jwks, false, null, true));
+  const jwt: Jwt = decode(token, { complete: true }) as Jwt
+  const signingKey = keys.find(key => key.kid === jwt.header.kid);
+  let certValue:string = signingKey.x5c[0];
+  certValue = certValue.match(/.{1,64}/g).join('\n');
+  const finalCertKey:string = `-----BEGIN CERTIFICATE-----\n${certValue}\n-----END CERTIFICATE-----\n`;
+  logger.info("finalCertKey - "+util.inspect(finalCertKey, false, null, true));
+  let jwtPayload:JwtPayload = verify(token, finalCertKey, { algorithms: ['RS256'] }) as JwtPayload; 
+  return jwtPayload;
+
+  // This code also did not work 2
+// Changes based on https://knowledge.udacity.com/questions/159762
+  /*
+  const jwt: Jwt = decode(token, { complete: true }) as Jwt
+  const jwtKid = jwt.header.kid
+  let cert: string | Buffer
+
+  try {
+    const jwks = await Axios.get(jwksUrl);
+    const signingKey = jwks.data.keys.filter(k => k.kid === jwtKid)[0];
+
+    if (!signingKey) {
+      throw new Error(`Unable to find a signing key that matches '${jwtKid}'`);
+    }
+    const { x5c } = signingKey;
+
+    cert = `-----BEGIN CERTIFICATE-----\n${x5c[0]}\n-----END CERTIFICATE-----`;
+
+  } catch (error) {
+    console.log('Error While getting Certificate : ', error);
+  }
+
+  return verify(token, cert, { algorithms: ['RS256'] }) as JwtPayload;
+  */
+
+  // My code did not work 1
+  // return verify(token, authosecret) as JwtPayload 
 }
 
 function getToken(authHeader: string): string {
