@@ -1,7 +1,7 @@
 # TODO: Change the name of the org 
-org: gonzalomunillag
-app: sls-todo-app
-service: sls-todo-service
+org: gonzalomunillag # here 
+app: serverless-todo-app
+service: serverless-todo-service
 
 # I added one plugin according to best practices
 plugins:
@@ -17,7 +17,7 @@ provider:
   lambdaHashingVersion: '20201221'
 
   stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-2'} # HERE - the default one was us-east-1, not sure if  I have to change to us-west-2
+  region: ${opt:region, 'us-east-1'} # HERE - the default one was us-east-1, not sure if  I have to change to us-west-2
 
   tracing:
     lambda: true

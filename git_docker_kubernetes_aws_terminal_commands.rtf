@@ -5,11 +5,11 @@
 \red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c97255\c97255\c97255;\cssrgb\c40000\c40000\c40000;
 \csgray\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww21140\viewh19200\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww13380\viewh12400\viewkind0
 \deftab720
 \pard\pardeftab720\partightenfactor0
 
-\f0\fs48 \cf2 \expnd0\expndtw0\kerning0
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
 GIT\
 \
 git clone ttps://github.com/your/repository\
@@ -33,7 +33,7 @@ git reset _number_ --hard\
 You can find _number_ in the previous pull\
 \
 # 
-\f1 To undo 
+\f1 \outl0\strokewidth0 \strokec2 To undo 
 \f0 git add
 \f1  before a commit, run 
 \f0 git reset <file>
@@ -43,7 +43,7 @@ You can find _number_ in the previous pull\
 \
 # check what has been staged 
 \f0 git diff --cached\
-\
+\outl0\strokewidth0 \
 \
 OR\
 git init -b main\
@@ -85,11 +85,13 @@ Ensure that the environment variables are read correctly while running the conta
 
 \f0 # Run from the directory where you have the compose file present\
 docker-compose config\
+\pard\pardeftab720\partightenfactor0
 
-\f1 \
+\f1 \cf2 \
 If you are rebuilding the images, you must delete the existing images locally, using:\
+\pard\pardeftab720\partightenfactor0
 
-\f0 # Run from the directory where you have the compose file present\
+\f0 \cf2 # Run from the directory where you have the compose file present\
 docker-compose down\
 # To delete all dangling images\
 docker image prune --all\
@@ -99,8 +101,9 @@ docker image prune --all\
 \pard\pardeftab720\partightenfactor0
 \cf2 \
 Pushing images\
+\pard\pardeftab720\partightenfactor0
 
-\f0 # Create a container\
+\f0 \cf2 # Create a container\
 docker run --name image1 -it busybox echo Image1\
 # Commit container to new image\
 docker commit image1 amjibaly/stuff:image1\
@@ -113,43 +116,54 @@ docker run --name image2 -it busybox echo Image2\
 docker commit image2 amjibaly/stuff:image2\
 # Push to same dockerhub repo with different tag\
 docker push amjibaly/stuff:image2\
+\pard\pardeftab720\partightenfactor0
 
-\f1 \
+\f1 \cf2 \
 \
 NOW you can have yml scripts to (i) build the images and (iii) create the containers from the images\
 \
 (i)\
 If you have a docker-compose-build.yml\
+\pard\pardeftab720\partightenfactor0
 
-\f0 # Make sure the Docker services are running in your local machine\
+\f0 \cf2 # Make sure the Docker services are running in your local machine\
 # Remove unused and dangling images\
 docker image prune --all\
 # Run this command from the directory where you have the "docker-compose-build.yaml" file present\
 docker-compose -f docker-compose-build.yaml build --parallel\
+\pard\pardeftab720\partightenfactor0
 
-\f1 \
+\f1 \cf2 \
 \
 (ii)\
 if you have a docker-compose.yml\
+\pard\pardeftab720\partightenfactor0
 
-\f0 $ docker-compose up\
+\f0 \cf2 $ docker-compose up\
 \
 \
 KUBERNETES\
 \
 # Set up a kubernetes cluster with one command\
-# Feel free to use the same/different flags as you like\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 # Feel free to use the same/different flags as you like\
 eksctl create cluster --name myCluster --region=us-east-1 --version=1.18 --nodes-min=2 --nodes-max=3\
 # Recommended: You can see many more flags using "eksctl create cluster --help" command.\
 # For example, you can set the node instance type using --node-type flag\
-\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \
 # get the nodes from your cluster\
-kubectl get nodes\
-\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 kubectl get nodes\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \
 # to add coffin files in the kubernetes cluster\
-kubectl apply -f name.yaml\
-\
-# Check the deployment names and their pod status\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 kubectl apply -f name.yaml\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 # Check the deployment names and their pod status\
 kubectl get deployments\
 # Create a Service object that exposes the frontend deployment:\
 kubectl expose deployment frontend --type=LoadBalancer --name=publicfrontend\
@@ -158,36 +172,30 @@ kubectl get services publicfrontend\
 # a5e34958a2ca14b91b020d8aeba87fbb-1366498583.us-east-1.elb.amazonaws.com\
 # Check name, ClusterIP, and External IP of all deployments\
 kubectl get services \
-\
-kubectl delete --all pods\
-\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 kubectl delete --all pods\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \
 # to include docker credentials in kubernetes\
 \pard\pardeftab720\partightenfactor0
-\cf2 \cb3 kubectl create secret docker-registry regcred --docker-server\cf4 =
-\f3 \cf5 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 =https://hub.docker.com/
-\f0 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\CocoaLigature1  --docker-username\cf4 =\cf2 lomuga --docker-password\cf4 =\cf2 gonlovesblockchain1 --docker-email\cf4 =\cf2 gonzalo.mg.munilla@bmwgroup.com\
+\cf2 \cb3 \outl0\strokewidth0 \strokec2 kubectl create secret docker-registry regcred --docker-server\cf4 \strokec4 =
+\f3\fs36 \cf5 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 =https://hub.docker.com/
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec2  --docker-username\cf4 \strokec4 =\cf2 \strokec2 lomuga --docker-password\cf4 \strokec4 =\cf2 \strokec2 gonlovesblockchain1 --docker-email\cf4 \strokec4 =\cf2 \strokec2 gonzalo.mg.munilla@bmwgroup.com\
 \
 \pard\pardeftab720\partightenfactor0
-\cf2 \cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1\fs24 \cf2 \
-SERBVERLESS\
+\cf2 \cb1 \outl0\strokewidth0 \
 \
-TO GET AWS credentials in sos\
-\
-sls config credentials --provider aws --key AKIAQ2DT3XGY5NYTHNOQ --secret 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 --profile serverless\
-\
-\pard\pardeftab720\partightenfactor0
-
-\f0\fs48 \cf2 \
 \
 AWS\
 \
 # prints all the credentials stored locally\
-cat ~/.aws/credentials\
-\
+\pard\pardeftab720\partightenfactor0
+\cf2 \outl0\strokewidth0 \strokec2 cat ~/.aws/credentials\outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
 \
 TERMINAL\
 \
@@ -196,10 +204,10 @@ cp file_name directory_name # copies and pastes a file into another directory\
 Vim file_name # you can alter the file in the terminal\
 \
 # encoding from binary to ASCII\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f3 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 echo -n "$POSTGRES_PASSWORD" | base64
-\f0 \cf2 \expnd0\expndtw0\kerning0
+\f3\fs36 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 echo -n "$POSTGRES_PASSWORD" | base64
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
 \CocoaLigature1 \
 \pard\pardeftab720\partightenfactor0
 \cf2 \
