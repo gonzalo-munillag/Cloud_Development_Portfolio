@@ -7,6 +7,9 @@ Develop_and_Deploy_Serverless_Apps/Lambda_CLI_commands.rtf
 Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/deployments/aws-secret.yaml
 Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/deployments/env-secret.yaml
 
+/Capstone_Project/Dates_book_keeping/deployments/aws-secret.yaml 
+/Capstone_Project/Dates_book_keeping/deployments/env-secret.yaml
+
 # pws
 IAM_udagram_user_udacity.rtf
 

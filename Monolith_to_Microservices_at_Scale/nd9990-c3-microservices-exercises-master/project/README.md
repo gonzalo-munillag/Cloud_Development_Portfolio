@@ -24,6 +24,9 @@ The project is split into two parts:
 
 ![5](Images/5.png)
 
+This is how the Travis file used to look like
+![26](Images/26.png)
+
 ### Images are in DockerHub
 
 ![6](Images/6.png)
