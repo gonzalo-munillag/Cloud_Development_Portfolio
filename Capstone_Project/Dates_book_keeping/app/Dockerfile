@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # setup env var for the app to send data to, allows it to be configurable
-ENV BACKEND_API=http://backend_api:6969/doSomething/
+# ENV BACKEND_API=http://backend_api:6969/doSomething/
 
 # expose port the app will listen on
 EXPOSE 3000

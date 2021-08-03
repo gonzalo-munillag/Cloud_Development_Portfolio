@@ -1,25 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Protected Page</a>
+    <a class="navbar-brand" href="#">Calendar Date Page</a>
 </nav>
 
 <div class="text-center">
-    <h2>This page is only visible to logged in users</h2>
+    <h2>This page is only visible to a safelisted user.</h2>
 
     <form method="POST" action="/protected" onsubmit="triggerLoading()">
         <div class="form-group">
-            <h2> Welcome to the protected page, choose a date here! </h2>
+            <h2> Welcome to the simple calendar date web page, choose a date here and input a todo! </h2>
 
             <div class="text-center">
                 <label for="enterDate">Date</label>
             </div>
-
+            {{!-- {{allows user date input}} --}}
             <input name="date" type="date" class="form-control" id="date" placeholder="Date">
+
+            <div class="text-center">
+                <label for="enterText">TODO</label>
+            </div>
+            
+            {{!-- {{allows user text input}} --}}
+            <input name="text" type="text" class="form-control" id="text" placeholder="TODO">
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary" id="loading-button">Submit</button>
         </div>
     </form>
-</div>
+
 
 <script>
     function triggerLoading() {
