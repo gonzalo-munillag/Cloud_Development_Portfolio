@@ -24,6 +24,8 @@ export const handler = middy(
     const attachmentId = uuid.v4()
 
     const Url = await getUploadUrl(attachmentId);
+    logger.info(`Created upload URL ${Url}`)
+
     await updateUrl(userId, todoId, attachmentId)
     
     return {

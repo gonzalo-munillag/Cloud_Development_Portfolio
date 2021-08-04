@@ -49,9 +49,13 @@ export class EditTodo extends React.PureComponent<
         alert('File should be selected')
         return
       }
-
+      console.log("I am here")
       this.setUploadState(UploadState.FetchingPresignedUrl)
+      console.log("I am here2")
+
       const uploadUrl = await getUploadUrl(this.props.auth.getIdToken(), this.props.match.params.todoId)
+      console.log(uploadUrl)
+      console.log("I am here3")
 
       this.setUploadState(UploadState.UploadingFile)
       await uploadFile(uploadUrl, this.state.file)
@@ -59,6 +63,7 @@ export class EditTodo extends React.PureComponent<
       alert('File was uploaded!')
     } catch (e) {
       alert('Could not upload a file: ' + e.message)
+      console.log(e)
     } finally {
       this.setUploadState(UploadState.NoUpload)
     }

@@ -26,8 +26,8 @@ export const handler = middy(
         'Access-Control-Allow-Credentials': true
       },
       // it should return void
-      body: JSON.stringify({
-        item: items
+      body: JSON.stringify({msg:"To-do's for current user",
+        items
       })
     }
 })

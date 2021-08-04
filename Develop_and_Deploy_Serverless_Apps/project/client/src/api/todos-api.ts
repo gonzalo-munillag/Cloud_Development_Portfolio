@@ -65,9 +65,12 @@ export async function getUploadUrl(
       'Authorization': `Bearer ${idToken}`
     }
   })
-  return response.data.uploadUrl
+  console.log(response)
+  return response.data.item
 }
 
 export async function uploadFile(uploadUrl: string, file: Buffer): Promise<void> {
+  console.log("async function uploadFile")
   await Axios.put(uploadUrl, file)
+  console.log("END async function uploadFile")
 }
