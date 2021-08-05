@@ -119,7 +119,7 @@ app.post('/protected', (req, res) => {
     datelist.push(Date.parse(date))
     todolist.push(text)
 
-    res.render('getdata', {
+    res.render('getData', {
         post: {
             date: datelist,
             text: todolist
