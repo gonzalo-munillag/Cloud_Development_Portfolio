@@ -4,6 +4,5 @@ data:
   AWS_PROFILE: default
   AWS_REGION: us-east-2
   JWT_SECRET: hello
-  URL: 
 metadata:
   name: env-config
