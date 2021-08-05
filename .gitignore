@@ -2,6 +2,7 @@
 set_env.sh
 
 Develop_and_Deploy_Serverless_Apps/Lambda_CLI_commands.rtf
+git_docker_kubernetes_aws_terminal_commands.rtf
 
 # config files
 Monolith_to_Microservices_at_Scale/nd9990-c3-microservices-exercises-master/project/deployments/aws-secret.yaml
