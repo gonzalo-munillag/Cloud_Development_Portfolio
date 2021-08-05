@@ -166,25 +166,11 @@ Now with version 2 without downtime, you need to run
 
 	kubectl set image deployment/app-date-todos uapp-date-todos=lomuga/app-date-todos:v2 --record=true
 	
-Yes I found a typo in my deployment file :D "uapp". But that is the name of the container
+Yes I found a typo in my deployment file :D "uapp". But that is the name of the container, so no problem
 
 ![12](Images/12.png)
 
 ![13](Images/13.png)
-
-7. Troubleshooting
-	
-Run the following command to get the list of pods.
-
-	kubectl get pods -n amazon-cloudwatch
-
-Run the following command and check the events at the bottom of the output.
-
-	kubectl describe pod pod-name -n amazon-cloudwatch
-
-Run the following command to check the logs.
-
-	kubectl logs pod-name  -n amazon-cloudwatch
 	
 ## User testing
 
