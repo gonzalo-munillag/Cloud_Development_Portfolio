@@ -10,6 +10,7 @@ const authTokens = {};
 
 const users = [
     // This user is added to the array to avoid creating new user on each restart
+    // you may safelist more users
     {
         firstName: 'User_First_Name',
         lastName: 'User_Last_Name',
@@ -106,7 +107,7 @@ app.get('/protected', (req, res) => {
     }
 });
 
-// 7
+// 7 Afer succesful input of data, it renders getdata to show on scereen the input data
 app.post('/protected', (req, res) => {
     const { date, text } = req.body;
     new Date
@@ -126,4 +127,5 @@ app.post('/protected', (req, res) => {
     })
 });
 
-app.listen(3000);
+// app.listen(3000);
+app.listen(80);

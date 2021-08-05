@@ -18,6 +18,8 @@ spec:
       - image: lomuga/app-date-todos:v1
         name: uapp-date-todos
         imagePullPolicy: Always
+        ports:
+        - containerPort: 80        
         resources:
           requests:
             memory: "512Mi"
@@ -26,11 +28,11 @@ spec:
             memory: "1024Mi"
             cpu: "500m"
         env:
-        - name: URL
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: URL
+        #- name: URL
+         # valueFrom:
+         #   configMapKeyRef:
+          #    name: env-config
+          #    key: URL
         - name: AWS_PROFILE
           valueFrom:
             configMapKeyRef:
