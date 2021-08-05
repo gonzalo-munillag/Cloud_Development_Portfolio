@@ -84,11 +84,9 @@ Pull the GitHub repo. Every time you make changes locally and you push it to Git
 
 Useful links:
 
-1. 
-For Kubernetes to know the docker secret, follow https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials
+1. For Kubernetes to know the docker secret, follow https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials
 
-2. 
-To access the app in Kubernetes externally, type loadbalancer: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
+2. To access the app in Kubernetes externally, type loadbalancer: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
 
 This is the service.yaml
 
@@ -111,13 +109,11 @@ The security group of the cluster is by default public
 
 ![18](Images/18.png)
 
-3. 
-Install kubectl and eksctl so that you can interact with the kubernetes cluster and deploy the cluster in one line from your terminal with:
+3. Install kubectl and eksctl so that you can interact with the kubernetes cluster and deploy the cluster in one line from your terminal with:
 
 	eksctl create cluster --name myCluster --region=us-east-1 --version=1.18 --nodes-min=2 --nodes-max=3
 
-4. 	
-In order to pull images from DockerHub inside your Kubernetes cluster, you need to add your Dockerhub credentials. Run the following:
+4. In order to pull images from DockerHub inside your Kubernetes cluster, you need to add your Dockerhub credentials. Run the following:
 
 	kubectl create secret docker-registry regcred --docker-server==https://hub.docker.com/ --docker-username=<DockerrHub_ID>--docker-password=<password> --docker-email=<your_email@whatever.com>
 
