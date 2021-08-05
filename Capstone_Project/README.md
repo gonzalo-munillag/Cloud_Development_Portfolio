@@ -87,7 +87,7 @@ Pull the GitHub repo. Every time you make changes locally and you push it to Git
 Useful links:
 
 1. 
-For Kubernetes to know the docker secret https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials
+For Kubernetes to know the docker secret, follow https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials
 
 2. 
 To access the app in Kubernetes externally, type NodePort: https://kubernetes.io/docs/concepts/services-networking/service/#nodeport
@@ -121,17 +121,17 @@ Note that in the file deplyoment, this has been added afetr containers:
 
 6. Access the cluster externally
 
-For NodePort, follow this guide: https://classroom.udacity.com/nanodegrees/nd9990-ent/parts/29e38604-db89-416d-a47e-c71941aa531e/modules/75cf3a42-d8e6-4941-ade6-5fa580fabea8/lessons/bd1704cc-0e23-4d23-8608-e38fae4208ab/concepts/44391b20-de82-4927-9fd8-135f291262d1
+## Rolling updates
 
-get the deployment name
+First, I changed the frontend to show this instead as a title (contains Version 2)
 
 ![5](Images/5.png)
 
-The name will go after the "deployment" command in this terminal input:
+I had to change .travis.yml and deployment.yaml:
 
-	kubectl expose deployment app-date-todos  --type=NodePort  --name=app-date-todos-public
+![9](Images/9.png)
 
-
+![10](Images/10.png)
 
 ## Cloud watch
 	
@@ -182,15 +182,27 @@ Performed accessing the Kubernetes cluster, see the URL in the search bar
 
 - Home page is displayed
 
+![6](Images/6.png)
+
 - Log in works
+
+![7](Images/7.png)
 
 - Input data works
 
+![8](Images/8.png)
+
 - Viewing data works
+
+![11](Images/11.png)
 
 - Going back and inputing more data works
 
+![12](Images/12.png)
+
 - There is indeed more data stored
+
+![13](Images/13.png)
 
 Future work:
 

@@ -15,7 +15,7 @@ spec:
         service: app-date-todos
     spec:
       containers:
-      - image: lomuga/app-date-todos:v1
+      - image: lomuga/app-date-todos:v2
         name: uapp-date-todos
         imagePullPolicy: Always
         ports:
