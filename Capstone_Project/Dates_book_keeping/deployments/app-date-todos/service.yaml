@@ -9,6 +9,9 @@ spec:
   - port: 80
     name: "80"
     targetPort: 80
+  - port: 81
+    name: "81"
+    targetPort: 81
   selector:
     service: app-date-todos
   type: LoadBalancer

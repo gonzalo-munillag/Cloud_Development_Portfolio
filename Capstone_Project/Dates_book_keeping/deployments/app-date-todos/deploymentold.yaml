@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   labels:
     service: app-date-todos
-  name: app-date-todos
+  name: app-date-todos-old
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       service: app-date-todos
@@ -15,11 +15,11 @@ spec:
         service: app-date-todos
     spec:
       containers:
-      - image: lomuga/app-date-todos:v2
-        name: uapp-date-todos
+      - image: lomuga/app-date-todos:v1
+        name: uapp-date-todos-old
         imagePullPolicy: Always
         ports:
-        - containerPort: 80        
+        - containerPort: 81        
         resources:
           requests:
             memory: "512Mi"

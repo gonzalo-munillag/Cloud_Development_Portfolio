@@ -16,9 +16,9 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t  app-date-todos ./Capstone_Project/Dates_book_keeping/app
-  - docker tag app-date-todos lomuga/app-date-todos:v2
+  - docker tag app-date-todos lomuga/app-date-todos:v1
   
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push lomuga/app-date-todos:v2
+  - docker push lomuga/app-date-todos:v1
 

@@ -47,12 +47,14 @@ Then the website will take you to a page to enter a date and a todo
 Once you hit submit, the app will print out the list of dates and todos
 
 6. 
-To input more data, press the "back" button of your browser
+To input more data, press the "back" button of your browser AND refresh the page
 
+I know, very clanky :D but the purpose of this project is to advance the knowledge of docker and kubernetes
 
 ## To run the app locally with **docker**:
 
 First you need to start the docker daemon.
+The Dockerfile is already in place
 
 run in the terminal in the directory where docker-compose.yaml is:
 
@@ -90,9 +92,28 @@ Useful links:
 For Kubernetes to know the docker secret, follow https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials
 
 2. 
-To access the app in Kubernetes externally, type NodePort: https://kubernetes.io/docs/concepts/services-networking/service/#nodeport
+To access the app in Kubernetes externally, type loadbalancer: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
 
-I chose NoePort as it is an easier solution than having a reverse proxy.
+This is the service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-date-todos
+  labels:
+    service: app-date-todos
+spec:
+  ports:
+  - port: 80
+    name: "80"
+    targetPort: 80
+  selector:
+    service: app-date-todos
+  type: LoadBalancer
+
+The security group of the cluster is by default public
+
+![18](Images/18.png)
 
 3. 
 Install kubectl and eksctl so that you can interact with the kubernetes cluster and deploy the cluster in one line from your terminal with:
@@ -119,9 +140,20 @@ Note that in the file deplyoment, this has been added afetr containers:
 	
 ![4](Images/4.png)
 
-6. Access the cluster externally
+6. Access the cluster externally with this URL add69654a18524a579ed6673eded111a-1235592976.us-east-2.elb.amazonaws.com
+
+It is provided by the laod balancer
+
+![17](Images/17.png)
+
+And here is the web page:
+
+![16](Images/16.png)
+
 
 ## Rolling updates
+
+I followed this guide to avoid downtimes: https://www.stacksimplify.com/aws-eks/kubernetes-for-absolute-beginners/update-kubernetes-deployments/
 
 First, I changed the frontend to show this instead as a title (contains Version 2)
 
@@ -133,34 +165,32 @@ I had to change .travis.yml and deployment.yaml:
 
 ![10](Images/10.png)
 
+![11](Images/10.png)
+
+
+This was version 1
+
+![6](Images/6.png)
+
+Now with version 2 without downtime, you need to run 
+
+	kubectl set image deployment/app-date-todos uapp-date-todos=lomuga/app-date-todos:v2 --record=true
+	
+Yes I found a typo in my deployment file :D "uapp". But that is the name of the container
+
+![12](Images/12.png)
+
+![12](Images/12.png)
+
 ## Cloud watch
 	
 To monitor the cluster with CloudWatch, follow these steps: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-metrics.html
 
-	kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
-	kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-serviceaccount.yaml
-	curl -O https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-configmap.yaml
-	
-Then change the default name in cwagent-configmap.yaml to your won cluster's name
+The cloudwatch pods are deployed
 
- 	kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-daemonset.yaml
-	
-OR 
+![19](Images/19.png)
 
-Download the DaemonSet YAML to your kubectl client host by running the following command.
 
-	curl -O  https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cwagent/cwagent-daemonset.yaml
-
-Uncomment the port section in the cwagent-daemonset.yaml file as in the following:
-
-ports:
-  - containerPort: 8125
-    hostPort: 8125
-    protocol: UDP
-
-Deploy the CloudWatch agent in your cluster by running the following command.
-
-	kubectl apply -f cwagent-daemonset.yaml
 
 7. Troubleshooting
 	
@@ -194,15 +224,11 @@ Performed accessing the Kubernetes cluster, see the URL in the search bar
 
 - Viewing data works
 
-![11](Images/11.png)
+![14](Images/14.png)
 
-- Going back and inputing more data works
+- Going back and inputing more data works. There is indeed more data stored
 
-![12](Images/12.png)
-
-- There is indeed more data stored
-
-![13](Images/13.png)
+![15](Images/15.png)
 
 Future work:
 
