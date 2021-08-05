@@ -31,7 +31,7 @@ getdata - displays the input data
 	node app.js
 
 1. 
-Then use your browser to visit localhost:3000
+Then use your browser to visit localhost:80
  
 2. 
 It will ask you for a login, you should enter **exactly**: 
@@ -64,7 +64,9 @@ run in the terminal in the directory where docker-compose.yaml is:
 
 	docker-compose up
 
-Visit localhost:3000
+Visit localhost:80
+
+(In the image you see 3000 becuase this was before I changed it to 80 fir Kubernetes.)
 
 ![3](Images/3.png)
 
@@ -84,7 +86,7 @@ Pull the GitHub repo. Every time you make changes locally and you push it to Git
 
 ![2](Images/2.png)
 
-## To deploy in **AWS' Kubernetes cluster**:
+## To deploy in **AWS' Kubernetes cluster**: The application runs on a cluster in the cloud
 
 Useful links:
 
@@ -142,16 +144,15 @@ Note that in the file deplyoment, this has been added afetr containers:
 
 6. Access the cluster externally with this URL add69654a18524a579ed6673eded111a-1235592976.us-east-2.elb.amazonaws.com
 
-It is provided by the laod balancer
+It is provided by the load balancer
 
 ![17](Images/17.png)
 
 And here is the web page:
 
-![16](Images/16.png)
+![6](Images/6.png)
 
-
-## Rolling updates
+## The app can be upgraded via rolling-update
 
 I followed this guide to avoid downtimes: https://www.stacksimplify.com/aws-eks/kubernetes-for-absolute-beginners/update-kubernetes-deployments/
 
@@ -167,7 +168,6 @@ I had to change .travis.yml and deployment.yaml:
 
 ![11](Images/10.png)
 
-
 This was version 1
 
 ![6](Images/6.png)
@@ -180,17 +180,7 @@ Yes I found a typo in my deployment file :D "uapp". But that is the name of the 
 
 ![12](Images/12.png)
 
-![12](Images/12.png)
-
-## Cloud watch
-	
-To monitor the cluster with CloudWatch, follow these steps: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-metrics.html
-
-The cloudwatch pods are deployed
-
-![19](Images/19.png)
-
-
+![13](Images/13.png)
 
 7. Troubleshooting
 	
@@ -218,7 +208,7 @@ Performed accessing the Kubernetes cluster, see the URL in the search bar
 
 ![7](Images/7.png)
 
-- Input data works
+- Input data works, I input some stuff before but now I go with I NEED TO DO MY GROCERIES
 
 ![8](Images/8.png)
 
@@ -226,9 +216,37 @@ Performed accessing the Kubernetes cluster, see the URL in the search bar
 
 ![14](Images/14.png)
 
-- Going back and inputing more data works. There is indeed more data stored
+- Going back and inputing more data works. There is indeed more data stored. I went this time with I NEED TO DO MY GROCERIES 2
 
 ![15](Images/15.png)
+
+## A/B deployment of the application
+
+I inspired myself from this [tutorial](https://blog.gurock.com/implement-ab-testing-using-kubernetes/) but it is not quite what I did because in their tutorial they do not have a front end.
+
+To have access to both versions, I had to add a second port in the service
+
+![20](Images/20.png)
+
+Then I changed the deployments like this
+
+![21](Images/21.png)
+
+Because the newer version is subject to more traffic (Given my arbitrary context :D) I gave it 2 replicas. And the old version just one, this would depict a setting when the new version seems to work well.
+
+![22](Images/22.png)
+
+I had to make the second deployment a loadbalancer, as it was not there by default. Here are the two:
+
+![23](Images/23.png)
+
+You can see here that both are running different images:
+
+![24](Images/24.png)
+
+And indeed both accept traffic and are running different versions. To make it more obvious I changed the titles
+
+![25](Images/25.png)
 
 Future work:
 
