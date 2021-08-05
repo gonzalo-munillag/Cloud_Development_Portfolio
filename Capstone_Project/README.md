@@ -30,24 +30,18 @@ getdata - displays the input data
 	npm install 
 	node app.js
 
-1. 
-Then use your browser to visit localhost:80
+1. Then use your browser to visit localhost:80
  
-2. 
-It will ask you for a login, you should enter **exactly**: 
+2. It will ask you for a login, you should enter **exactly**: 
 for email "user@email.com" and for password "password"
 
-3. 
-You can safelist more users in line 11 of app.js
+3. You can safelist more users in line 11 of app.js
 
-4. 
-Then the website will take you to a page to enter a date and a todo
+4. Then the website will take you to a page to enter a date and a todo
 
-5. 
-Once you hit submit, the app will print out the list of dates and todos
+5. Once you hit submit, the app will print out the list of dates and todos
 
-6. 
-To input more data, press the "back" button of your browser AND refresh the page
+6. To input more data, press the "back" button of your browser AND refresh the page
 
 I know, very clanky :D but the purpose of this project is to advance the knowledge of docker and kubernetes
 
@@ -66,7 +60,7 @@ run in the terminal in the directory where docker-compose.yaml is:
 
 Visit localhost:80
 
-(In the image you see 3000 becuase this was before I changed it to 80 fir Kubernetes.)
+(In the image you see 3000 becuase this was before I changed it to 80 for Kubernetes.)
 
 ![3](Images/3.png)
 
