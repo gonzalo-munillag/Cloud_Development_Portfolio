@@ -20,5 +20,5 @@ script:
   
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push lomuga/app-date-todos:v1
+  - docker push lomuga/app-date-todos:v2
 
