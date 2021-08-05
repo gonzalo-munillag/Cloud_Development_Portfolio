@@ -4,10 +4,25 @@ metadata:
   name: app-date-todos
   labels:
     service: app-date-todos
+# This way we can access the app externally: https://kubernetes.io/docs/concepts/services-networking/service/#nodeport
 spec:
-  ports:
-  - port: 8080
-    name: "8080"
-    targetPort: 8080
+  type: NodePort
   selector:
-    service: app-date-todos
+    app: app-date-todos
+  ports:
+      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - port: 80
+      targetPort: 80
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+      nodePort: 30007
+
+
+# spec:
+#  ports:
+#  - port: 3000
+#    name: "3000"
+#    targetPort: 3000
+#  selector:
+#    service: app-date-todos
+

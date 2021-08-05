@@ -57,3 +57,5 @@ spec:
       - name: aws-secret
         secret:
           secretName: aws-secret
+
+# For Kubernetes to know the docker secret https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials

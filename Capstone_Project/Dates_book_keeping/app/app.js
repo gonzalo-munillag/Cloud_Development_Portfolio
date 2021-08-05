@@ -110,27 +110,19 @@ app.get('/protected', (req, res) => {
 app.post('/protected', (req, res) => {
     const { date, text } = req.body;
     new Date
-    new Text
+    // new Text()
     console.log("Date entered: " + Date.parse(date))
-    console.log("Text entered: " + Text.parse(text))
+    console.log("Text entered: " + text)
 
     // the app saves values for later retrieval
-    datelist.append(date)
-    todolist.append(text)
+    datelist.push(Date.parse(date))
+    todolist.push(text)
 
-    const doSomething = new Promise((resolve, reject) => {
-        //const request = require('request');
-        //let url = process.env.BACKEND_API + (Date.parse(date)/1000)
-        //let options = {
-        //    headers: {
-         //   }};
-
-        res.render(getData, {
-            post: {
-                date: datelist,
-                text: todolist
-            }
-        });
+    res.render('getdata', {
+        post: {
+            date: datelist,
+            text: todolist
+        }
     })
 });
 
