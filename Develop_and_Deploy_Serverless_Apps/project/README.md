@@ -1,10 +1,36 @@
-# Serverless TODO
+# Serverless TODO app
 
 Acknowledgments:
 
 I would like to thank [Philipp Ross](https://github.com/philross) for his kind support during the development of this project.
 
 To implement this project, you need to implement a simple TODO application using AWS Lambda and Serverless framework. Search for all comments starting with the `TODO:` in the code to find the placeholders that you need to implement.
+
+# Frontend
+
+![8](Images/8.png)
+
+![9](Images/9.png)
+
+# Backend
+
+![0](Images/0.png)
+
+![1](Images/1.png)
+
+![2](Images/2.png)
+
+![3](Images/3.png)
+
+![4](Images/4.png)
+
+![5](Images/5.png)
+
+![6](Images/6.png)
+
+![7](Images/7.png)
+
+
 
 # Functionality of the application
 
