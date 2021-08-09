@@ -49,6 +49,7 @@ export const getTodo = async (todoId: string, userId: string): Promise<TodoItem>
     return await todosAccess.getTodo(todoId, userId);
     }
 
+    // thanks to feedback from https://knowledge.udacity.com/questions/659234
 export async function updateTodo(userId: string, todoId: string, updateTodoRequest: UpdateTodoRequest) {
     
     logger.info(`Update todo ${todoId} for user ${userId}`)
@@ -60,7 +61,7 @@ export async function updateTodo(userId: string, todoId: string, updateTodoReque
         throw new Error('Update denied, not your todo')  
       }    
        
-    return await todosAccess.updateTodo(todoId, updateTodoRequest);
+    return await todosAccess.updateTodo(todoId, updateTodoRequest, userId);
     }
 
 export async function updateUrl(userId: string, todoId: string, attachmentURL: string) {

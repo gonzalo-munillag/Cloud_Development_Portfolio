@@ -8,7 +8,7 @@ import { cors, httpErrorHandler } from 'middy/middlewares'
 // I had to change the next line
 import { getUploadUrl, updateUrl } from '../../helpers/todos'
 import { getUserId } from '../utils'
-import * as uuid from 'uuid'
+//import * as uuid from 'uuid'
 
 import { createLogger } from '../../utils/logger';
 
@@ -21,9 +21,10 @@ export const handler = middy(
     logger.info(`Processing event: ${event}`)
 
     const userId = getUserId(event)
-    const attachmentId = uuid.v4()
+    // based on correction https://knowledge.udacity.com/questions/659234
+    const Url = await getUploadUrl(todoId)
+    const attachmentId = Url.split("?")[0]
 
-    const Url = await getUploadUrl(attachmentId);
     logger.info(`Created upload URL ${Url}`)
 
     await updateUrl(userId, todoId, attachmentId)

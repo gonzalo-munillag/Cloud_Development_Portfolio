@@ -249,6 +249,7 @@ resources:
                 - HEAD
               MaxAge: 3000
 
+    # Policy fomr the mentor help portal
     # TODO: Complete the policy below and attach it to the bucket defined above
     # For cross referencing the name of the bucket, use "!Ref AttachmentsBucket"
     BucketPolicy:
@@ -258,10 +259,10 @@ resources:
           Id: MyPolicy
           Version: "2012-10-17"
           Statement:
-            - Sid: PublicReadWriteBucketPolicy # PublicReadForGetBucketObjects
+            - Sid: PublicReadWriteBucketPolicy 
               Effect: Allow
               Principal: '*'
-              Action: # 's3:GetObject'
+              Action: 
                 - s3:GetObject
                 - s3:PutObject
               Resource: 'arn:aws:s3:::${self:provider.environment.ATTACHMENT_S3_BUCKET}/*'
