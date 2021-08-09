@@ -96,7 +96,7 @@ functions:
           authorizer: Auth
           #reqValidatorName: RequestBodyValidator # here
           request:
-            schemas:
+            schema:
               application/json: ${file(models/create-todo-model.json)}
     iamRoleStatements: # here
       - Effect: Allow
