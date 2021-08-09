@@ -8,7 +8,7 @@ plugins:
   - serverless-webpack
   - serverless-iam-roles-per-function
   - serverless-plugin-tracing
-  - serverless-reqvalidator-plugin  # I added this from the exercise steps
+  #- serverless-reqvalidator-plugin  # I added this from the exercise steps
 
 
 provider:
@@ -66,7 +66,7 @@ functions:
           path: todos
           cors: true
           authorizer: Auth
-          reqValidatorName: RequestBodyValidator # here
+          #reqValidatorName: RequestBodyValidator # here
     iamRoleStatements: # here
       - Effect: Allow
         Action:
@@ -94,7 +94,7 @@ functions:
           path: todos
           cors: true
           authorizer: Auth
-          reqValidatorName: RequestBodyValidator # here
+          #reqValidatorName: RequestBodyValidator # here
           request:
             schemas:
               application/json: ${file(models/create-todo-model.json)}
@@ -120,7 +120,7 @@ functions:
           path: todos/{todoId}
           cors: true # here
           authorizer: Auth # here
-          reqValidatorName: RequestBodyValidator # here
+          #reqValidatorName: RequestBodyValidator # here
           request: # here, from above 
             schema:
               'application/json': ${file(models/update-todo-model.json)}
@@ -147,7 +147,7 @@ functions:
           path: todos/{todoId}
           cors: true # here
           authorizer: Auth # here
-          reqValidatorName: RequestBodyValidator # here
+          #reqValidatorName: RequestBodyValidator # here
     iamRoleStatements: # here
       - Effect: Allow
         Action:
@@ -171,7 +171,7 @@ functions:
           path: todos/{todoId}/attachment
           cors: true # here
           authorizer: Auth # here
-          reqValidatorName: RequestBodyValidator # here
+          #reqValidatorName: RequestBodyValidator # here
     iamRoleStatements: # here
       - Effect: Allow
         Action:
@@ -269,11 +269,11 @@ resources:
         Bucket: !Ref AttachmentsBucket
 
     # Here, as per the exercise in the course
-    RequestBodyValidator:
-      Type: AWS::ApiGateway::RequestValidator
-      Properties:
-        Name: 'request-body-validator'
-        RestApiId:
-          Ref: ApiGatewayRestApi
-        ValidateRequestBody: true
-        ValidateRequestParameters: false
+    #RequestBodyValidator:
+     # Type: AWS::ApiGateway::RequestValidator
+     # Properties:
+      #  Name: 'request-body-validator'
+      #  RestApiId:
+      #    Ref: ApiGatewayRestApi
+       # ValidateRequestBody: true
+      #  ValidateRequestParameters: false
