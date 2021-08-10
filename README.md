@@ -4,6 +4,8 @@
 
 Workload: 4 months - 10 h/week (160 h)
 
+Certificate: https://graduation.udacity.com/nd9990-ent
+
 Besides these projects, the Udacity course contained theoretical classes and multiple practical exercises that covered additional content beyond these projects. In these repo, the highlights of the course's content are annotated in .md files.
 
 | Topic | Project |
